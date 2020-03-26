@@ -8,7 +8,7 @@
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/v1/dob",
+    "href": "/v1/date-of-birth",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -17,7 +17,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/v1/number-of-people" method="post" class="form">
+      <form action="/v1/number-people-live-with" method="post" class="form">
 
         {{ input({
           "label": {

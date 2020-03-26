@@ -8,7 +8,7 @@
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/v1/staying-home",
+    "href": "/v1/reason-at-home",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -17,7 +17,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/v1/symptoms-date" method="post" class="form">
+    <form action="/v1/when-symptoms-started" method="post" class="form">
 
       {{ checkboxes({
         "idPrefix": "symptoms",
