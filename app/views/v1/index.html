@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Start - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Tell us if you’re staying at home because of coronavirus
+      </h1>
+
+      <p>This is a research tool to help us record how many people are staying at home due to coronavirus (COVID-19).</p>
+
+      <p>By answering some quick questions you can help the NHS to understand:</p>
+
+      <ul>
+        <li>how people are being affected by coronavirus</li>
+        <li>the number of people recovering from coronavirus</li>
+        <li>which areas of the country need resources most</li>
+      </ul>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>We will not share the answers you give us beyond the Department of Health and Social Care.</p>
+      </div>
+
+      <a class="nhsuk-button" href="/v1/myself">
+        Start now
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

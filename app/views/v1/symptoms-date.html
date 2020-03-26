@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Symptoms - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/v1/symptoms",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/v1/conditions" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "myself",
+        "name": "myself",
+        "fieldset": {
+          "legend": {
+            "text": "When did your symptoms first start?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "If you are not sure which day your symptoms first started, select an approximate date."
+        },
+        "items": [
+          {
+            "value": "Today",
+            "text": "Today",
+            "name": "Today"
+          },
+          {
+            "value": "1 day ago",
+            "text": "1 day ago",
+            "name": "1 day ago"
+          },
+          {
+            "value": "2 days ago",
+            "text": "2 days ago",
+            "name": "2 days ago"
+          },
+          {
+            "value": "3 days ago",
+            "text": "3 days ago",
+            "name": "3 days ago"
+          },
+          {
+            "value": "4 days ago",
+            "text": "4 days ago",
+            "name": "4 days ago"
+          },
+          {
+            "value": "5 days ago",
+            "text": "5 days ago",
+            "name": "5 days ago"
+          },
+          {
+            "value": "6 days ago",
+            "text": "6 days ago",
+            "name": "6 days ago"
+          },
+          {
+            "value": "Other",
+            "text": "Other",
+            "name": "Other"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
