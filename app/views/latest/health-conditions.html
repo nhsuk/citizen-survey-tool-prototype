@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Conditions - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/latest/when-symptoms-started",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/latest/date-of-birth" method="post" class="form">
+
+      {{ checkboxes({
+        "idPrefix": "conditions",
+        "name": "conditions",
+        "fieldset": {
+          "legend": {
+            "text": "Do you have any of these health conditions?",
+            "classes": "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        "hint": {
+          "text": "Select all that apply"
+        },
+        "items": [
+          {
+            "value": "Asthma",
+            "text": "Asthma"
+          },
+          {
+            "value": "Diabetes",
+            "text": "Diabetes"
+          },
+          {
+            "value": "Heart problem",
+            "text": "Heart problem"
+          },
+          {
+            "value": "Kidney problem",
+            "text": "Kidney problem"
+          },
+          {
+            "value": "A weakened immune system",
+            "text": "A weakened immune system"
+          },
+          {
+            "value": "Chronic lung condition besides asthma e.g. COPD, emphysema, or other conditions that affect your breathing",
+            "text": "Chronic lung condition besides asthma e.g. COPD, emphysema, or other conditions that affect your breathing"
+          },
+          {
+            "value": "No – I don't have any of these health conditions",
+            "text": "No – I don't have any of these health conditions"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
