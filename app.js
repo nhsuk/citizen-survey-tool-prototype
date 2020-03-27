@@ -224,9 +224,18 @@ app.post('/examples/passing-data/clear-data', function (req, res) {
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
   // Apologies this is soooo hacky
-  if (req.session.data['household']) {
+  const { data } = req.session;
+  // If you have made it to summary step
+  if (data.household) {
+    // If you have now entered that you have symptoms and haven't
+    // specified symptom start date you will not be jumped to summary
+    if (data.symptoms !== 'No - I do not have any symptoms' && !data['start-date']) {
+      res.redirect('/' + req.params[0])
+    }
+    // Skip to summary if you haven't answered anything to effect the flow
     res.redirect('/latest/check-your-answers');
   }
+  // If you haven't reached summary then keep standard behaviour
   res.redirect('/' + req.params[0])
 })
 
