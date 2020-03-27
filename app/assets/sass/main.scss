@@ -15,3 +15,20 @@
   @include nhsuk-responsive-margin(4, "top");
   margin-bottom: 0;
 }
+
+.nhsuk-header--corona {
+  background-color: #000;
+  border-top: 10px solid #7eff8e;
+
+  .nhsuk-header__logo {
+    .nhsuk-logo__background {
+      fill: #005eb8;
+    }
+
+    .nhsuk-logo__text {
+        fill: #ffffff;
+    }
+  }
+
+
+}

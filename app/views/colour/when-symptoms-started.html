@@ -1,0 +1,72 @@
+{% extends 'layout-colour.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Symptoms - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/colour/current-symptoms",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/colour/health-conditions" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "myself",
+        "name": "myself",
+        "fieldset": {
+          "legend": {
+            "text": "When did your symptoms start?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "If you are not sure which day your symptoms started, select an approximate date"
+        },
+        "items": [
+          {
+            "value": "Today",
+            "text": "Today",
+            "name": "Today"
+          },
+          {
+            "value": "Yesterday",
+            "text": "Yesterday",
+            "name": "Yesterday"
+          },
+          {
+            "value": "2 to 4 days ago",
+            "text": "2 to 4 days ago",
+            "name": "2 to 4 days ago"
+          },
+          {
+            "value": "5 to 7 days ago",
+            "text": "5 to 7 days ago",
+            "name": "5 to 7 days ago"
+          },
+          {
+            "value": "Over a week ago",
+            "text": "Over a week ago",
+            "name": "Over a week ago"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
