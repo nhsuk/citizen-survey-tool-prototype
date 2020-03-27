@@ -30,5 +30,10 @@
     }
   }
 
+  .nhsuk-header__transactional-service-name--link {
+    &:focus {
+      box-shadow: none;
+    }
+  }
 
 }
