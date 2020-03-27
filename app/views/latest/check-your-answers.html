@@ -35,7 +35,7 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <ul class='nhsuk-list'>
-              {% for item in data['staying-home'] %}
+              {% for item in data['staying-home'] | toArray %}
                 <li>{{ item }}</li>
               {% endfor %}
             </ul>
@@ -52,7 +52,7 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <ul class='nhsuk-list'>
-              {% for item in data['symptoms'] %}
+              {% for item in (data['symptoms'] | toArray) %}
                 <li>{{ item }}</li>
               {% endfor %}
             </ul>
@@ -84,7 +84,7 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <ul class='nhsuk-list'>
-              {% for item in data['conditions'] %}
+              {% for item in data['conditions'] | toArray %}
                 <li>{{ item }}</li>
               {% endfor %}
             </ul>
