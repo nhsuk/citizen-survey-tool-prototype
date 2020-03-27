@@ -19,12 +19,15 @@
 
     <form action="/latest/current-symptoms" method="post" class="form">
 
+      {% set pronoun = 'you' if (data['myself'] === 'For myself') else 'they' %}
+      {% set legendText = 'Why are ' + pronoun + ' staying at home?' %}
+
       {{ checkboxes({
         "idPrefix": "staying-home",
         "name": "staying-home",
         "fieldset": {
           "legend": {
-            "text": "Why are you staying at home?",
+            "text": legendText,
             "classes": "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
