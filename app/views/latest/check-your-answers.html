@@ -34,7 +34,11 @@
               Reason for staying at home
           </dt>
           <dd class="nhsuk-summary-list__value">
-              {{ data['staying-home'] }}
+            <ul class='nhsuk-list'>
+              {% for item in data['staying-home'] %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/latest/reason-at-home">
@@ -47,7 +51,11 @@
               Current symptoms
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['symptoms'] }}
+            <ul class='nhsuk-list'>
+              {% for item in data['symptoms'] %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/latest/current-symptoms">
@@ -75,7 +83,11 @@
               Health problems
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['conditions'] }}
+            <ul class='nhsuk-list'>
+              {% for item in data['conditions'] %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/latest/health-conditions">
