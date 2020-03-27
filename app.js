@@ -223,6 +223,10 @@ app.post('/examples/passing-data/clear-data', function (req, res) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
+  // Apologies this is soooo hacky
+  if (req.session.data['household']) {
+    res.redirect('/latest/check-your-answers');
+  }
   res.redirect('/' + req.params[0])
 })
 

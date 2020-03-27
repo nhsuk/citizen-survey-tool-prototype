@@ -10,4 +10,9 @@ router.post('/latest/when-symptoms-started', (req, res, next) => {
 	next();
 });
 
+router.post('/latest/check-your-answers', (req, res, next) => {
+	console.log(req.session.data);
+	next();
+});
+
 module.exports = router;

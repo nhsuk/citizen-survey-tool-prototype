@@ -21,11 +21,11 @@
               Completing survey for
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Yourself
+            {{ data['myself'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="#">
-              Change<span class="nhsuk-u-visually-hidden"></span>
+            <a class="nhsuk-link" href="/latest/you-or-someone-else">
+              Change<span class="nhsuk-u-visually-hidden">Completing survey for</span>
             </a>
           </dd>
         </div>
@@ -34,10 +34,10 @@
               Reason for staying at home
           </dt>
           <dd class="nhsuk-summary-list__value">
-              Someone I live with has coronavirus
+              {{ data['staying-home'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="#">
+            <a class="nhsuk-link" href="/latest/reason-at-home">
               Change <span class="nhsuk-u-visually-hidden">Reason for staying at home</span>
             </a>
           </dd>
@@ -47,10 +47,10 @@
                 Current symptoms
             </dt>
             <dd class="nhsuk-summary-list__value">
-              Sore throat
+              {{ data['symptoms'] }}
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a class="nhsuk-link" href="#">
+              <a class="nhsuk-link" href="/latest/current-symptoms">
                 Change <span class="nhsuk-u-visually-hidden">Current symptoms</span>
               </a>
             </dd>
@@ -60,10 +60,10 @@
               Date symptoms started
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Today
+            {{ data['start-date'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="#">
+            <a class="nhsuk-link" href="/latest/when-symptoms-started">
               Change <span class="nhsuk-u-visually-hidden">Date symptoms started</span>
             </a>
           </dd>
@@ -73,10 +73,10 @@
               Health problems
           </dt>
           <dd class="nhsuk-summary-list__value">
-            No - I do not have any of these health problems
+            {{ data['conditions'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="#">
+            <a class="nhsuk-link" href="/latest/health-conditions">
               Change <span class="nhsuk-u-visually-hidden">Health conditions</span>
             </a>
           </dd>
@@ -91,10 +91,10 @@
               Date of birth
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p class="nhsuk-body">15/3/1984</p>
+            {{ data['dob-day'] }}/{{ data['dob-month'] }}/{{ data['dob-year'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="#">
+            <a class="nhsuk-link" href="/latest/date-of-birth">
               Change<span class="nhsuk-u-visually-hidden"></span>
             </a>
           </dd>
@@ -104,10 +104,10 @@
               Postcode
             </dt>
             <dd class="nhsuk-summary-list__value">
-              LS29 6JE
+              {{ data['postcode'] }}
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a class="nhsuk-link" href="#">
+              <a class="nhsuk-link" href="/latest/postcode">
                 Change<span class="nhsuk-u-visually-hidden"></span>
               </a>
             </dd>
@@ -117,17 +117,17 @@
               Number of people who live in your home
             </dt>
             <dd class="nhsuk-summary-list__value">
-              3
+              {{ data['household'] }}
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a class="nhsuk-link" href="#">
+              <a class="nhsuk-link" href="/latest/number-people-live-with">
                 Change<span class="nhsuk-u-visually-hidden"></span>
               </a>
             </dd>
         </div>
       </dl>
 
-      <a class="nhsuk-button" href="/latest/confirmation">
+      <a class="nhsuk-button" href="//latest/confirmation">
        Accept and send
       </a>
 

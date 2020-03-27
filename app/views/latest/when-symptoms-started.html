@@ -20,8 +20,8 @@
     <form action="/latest/health-conditions" method="post" class="form">
 
       {{ radios({
-        "idPrefix": "myself",
-        "name": "myself",
+        "idPrefix": "start-date",
+        "name": "start-date",
         "fieldset": {
           "legend": {
             "text": "When did your symptoms start?",
@@ -36,27 +36,32 @@
           {
             "value": "Today",
             "text": "Today",
-            "name": "Today"
+            "name": "Today",
+            "checked": checked("start-date", "Today")
           },
           {
             "value": "Yesterday",
             "text": "Yesterday",
-            "name": "Yesterday"
+            "name": "Yesterday",
+            "checked": checked("start-date", "Yesterday")
           },
           {
             "value": "2 to 4 days ago",
             "text": "2 to 4 days ago",
-            "name": "2 to 4 days ago"
+            "name": "2 to 4 days ago",
+            "checked": checked("start-date", "2 to 4 days ago")
           },
           {
             "value": "5 to 7 days ago",
             "text": "5 to 7 days ago",
-            "name": "5 to 7 days ago"
+            "name": "5 to 7 days ago",
+            "checked": checked("start-date", "5 to 7 days ago")
           },
           {
             "value": "Over a week ago",
             "text": "Over a week ago",
-            "name": "Over a week ago"
+            "name": "Over a week ago",
+            "checked": checked("start-date", "Over a week ago")
           }
         ]
       }) }}
