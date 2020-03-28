@@ -10,6 +10,16 @@
   margin-bottom: 0;
 }
 
+.nhsuk-inset-text--attention {
+  @include nhsuk-responsive-padding(4);
+  border: 12px solid #005eb8;
+}
+
+///////////////////////////////////////////
+// Style for custom corona header
+// Not currently being used but keeping as a back-up
+///////////////////////////////////////////
+
 .nhsuk-header--corona {
   background-color: #000;
   border-top: 10px solid #7eff8e;
