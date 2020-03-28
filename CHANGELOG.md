@@ -6,6 +6,7 @@
 
 - Change `/health-conditions` page name to `/health-problems`
 - Change `/confirmation` page name to `/done`
+- Added `nhsuk-inset-text` variant `nhsuk-inset-text--attention` used on `/start` and `/done` pages - Sass in `/app/assets/sass/main.scss`
 
 ## 1.0.0 - Mar 27, 2020
 
