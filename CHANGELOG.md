@@ -4,7 +4,8 @@
 
 :new: **New features**
 
-- Change `/latest/health-conditions` page name to `/latest/health-problems`
+- Change `/health-conditions` page name to `/health-problems`
+- Change `/confirmation` page name to `/done`
 
 ## 1.0.0 - Mar 27, 2020
 
