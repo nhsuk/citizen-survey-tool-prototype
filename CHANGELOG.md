@@ -26,6 +26,7 @@ Health conditions page
 - Change page name `health-conditions` to `health-problems`
 
 Check your answers page
+- Change heading `Coronavirus symptoms` to `Your experience`
 - Change `Current symptoms` to `How are you feeling?`
 - Change `Date symptoms started` to `When did this start?`
 
