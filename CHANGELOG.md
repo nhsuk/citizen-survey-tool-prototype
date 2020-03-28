@@ -18,9 +18,12 @@ Current symptoms page
 - Update page title, hint text and checkbox
 - Note: `"I am feeling OK"` answer replaced `"No - I do not have any symptoms"` but still routes to `health-problems`
 
-When symptoms started
+When symptoms started page
 - Change page name `when-symptoms-started` to `when-did-this-start`
 - Update page title and hint text
+
+Health conditions page
+- Change page name `health-conditions` to `health-problems`
 
 ## 1.0.0 - Mar 27, 2020
 
