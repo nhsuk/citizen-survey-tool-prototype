@@ -4,7 +4,7 @@
 
 :new: **New features**
 
-- 
+- Change `/latest/health-conditions` page name to `/latest/health-problems`
 
 ## 1.0.0 - Mar 27, 2020
 
