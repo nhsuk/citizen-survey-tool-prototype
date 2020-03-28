@@ -25,6 +25,10 @@ When symptoms started page
 Health conditions page
 - Change page name `health-conditions` to `health-problems`
 
+Check your answers page
+- Change `Current symptoms` to `How are you feeling?`
+- Change `Date symptoms started` to `When did this start?`
+
 ## 1.0.0 - Mar 27, 2020
 
 :tada: **Official release of the Citizen Survey Prototype**
