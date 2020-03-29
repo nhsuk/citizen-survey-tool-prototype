@@ -3,7 +3,7 @@
 ## 1.0.2 - Mar 29, 2020
 
 :wrench: **Fixes**
-
+- Content updates based on feedback ([JIRA Ticket SIF-68](https://jira.service.nhs.uk/browse/SIF-68))
 - Remove `cookies` paragraph in footer
 - Add `cookies` link to list of links in the footer
 
