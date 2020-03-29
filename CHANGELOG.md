@@ -1,5 +1,12 @@
 # Citizen Survey Prototype Changelog
 
+## 1.0.2 - Mar 29, 2020
+
+:wrench: **Fixes**
+
+- Remove `cookies` paragraph in footer
+- Add `cookies` link to list of links in the footer
+
 ## 1.0.1 - Mar 28, 2020
 
 :new: **New features**
