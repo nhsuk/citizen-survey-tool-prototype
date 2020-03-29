@@ -12,7 +12,7 @@
 
 .nhsuk-inset-text--attention {
   @include nhsuk-responsive-padding(4);
-  border: 12px solid #005eb8;
+  border: 12px solid $color_nhsuk-blue;
 }
 
 ///////////////////////////////////////////
@@ -26,11 +26,11 @@
 
   .nhsuk-header__logo {
     .nhsuk-logo__background {
-      fill: #005eb8;
+      fill: $color_nhsuk-blue;
     }
 
     .nhsuk-logo__text {
-        fill: #ffffff;
+        fill: $color_nhsuk-white;
     }
   }
 
@@ -41,7 +41,7 @@
   }
 
   .nhsuk-header__link:hover .nhsuk-logo {
-    box-shadow: 0 0 0 4px #ffffff;
+    box-shadow: 0 0 0 4px $color_nhsuk-white;
   }
 
 }
