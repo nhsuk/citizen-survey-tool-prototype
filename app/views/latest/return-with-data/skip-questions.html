@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Yourself or someone else - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/latest/return-with-data/check-your-answers",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/latest/return-with-data/done" method="post" class="form">
+
+      {% call fieldset({
+        legend: {
+          "text": "Remember your details for next time?",
+          "classes": "nhsuk-fieldset__legend--xl nhsuk-u-margin-bottom-5",
+          "isPageHeading": true
+        }
+        }) %}
+      
+        <p>Please come back and complete this survey again. You can do it every day or every few days.</p>
+
+        <p>To save you entering some of your information again, we can remember your:</p>
+
+        <ul>
+          <li>health problems</li>
+          <li>date of birth</li>
+          <li>postcode</li>
+          <li>number of people in your home</li>
+        </ul>
+
+        <p>We’ll store this information in a small file called a cookie on your device.</p>
+        
+        {{ radios({
+          "idPrefix": "skip-questions",
+          "name": "skip-questions",
+          "items": [
+        {
+          "value": "Yes, store these details for next time",
+          "text": "Yes, store these details for next time"
+        },
+        {
+          "value": "No, do not store these details for next time",
+          "text": "No, do not store these details for next time"
+        }
+        ]
+        }) }}
+      {% endcall %}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

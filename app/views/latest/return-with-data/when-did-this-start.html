@@ -8,7 +8,7 @@
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/latest/how-are-you-feeling",
+    "href": "/latest/return-with-data/how-are-you-feeling",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -17,11 +17,11 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/latest/health-problems" method="post" class="form">
+    <form action="/latest/return-with-data/check-your-answers" method="post" class="form">
 
       {{ radios({
-        "idPrefix": "date-started",
-        "name": "date-started",
+        "idPrefix": "date-started-return",
+        "name": "date-started-return",
         "fieldset": {
           "legend": {
             "text": "When did you start feeling like this?",
@@ -37,31 +37,31 @@
             "value": "Today",
             "text": "Today",
             "name": "Today",
-            "checked": checked("date-started", "Today")
+            "checked": checked("date-started-return", "Today")
           },
           {
             "value": "Yesterday",
             "text": "Yesterday",
             "name": "Yesterday",
-            "checked": checked("date-started", "Yesterday")
+            "checked": checked("date-started-return", "Yesterday")
           },
           {
             "value": "2 to 4 days ago",
             "text": "2 to 4 days ago",
             "name": "2 to 4 days ago",
-            "checked": checked("date-started", "2 to 4 days ago")
+            "checked": checked("date-started-return", "2 to 4 days ago")
           },
           {
             "value": "5 to 7 days ago",
             "text": "5 to 7 days ago",
             "name": "5 to 7 days ago",
-            "checked": checked("date-started", "5 to 7 days ago")
+            "checked": checked("date-started-return", "5 to 7 days ago")
           },
           {
             "value": "Over a week ago",
             "text": "Over a week ago",
             "name": "Over a week ago",
-            "checked": checked("date-started", "Over a week ago")
+            "checked": checked("date-started-return", "Over a week ago")
           }
         ]
       }) }}
