@@ -63,13 +63,13 @@
               </a>
             </dd>
           </div>
-          {% if (data['symptoms-without-data'] !== "I am feeling OK") %}
+          {% if (data['symptoms-return-without-data'] !== "I am feeling OK") %}
           <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
               When did this start?
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['date-started-return'] }}
+            {{ data['date-started-return-without-data'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/latest/return-without-data/when-did-this-start">
