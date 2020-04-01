@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-   User - Citizen survey tool prototype - Version 1
+   Postcode - Citizen survey tool prototype - Version 1
 {% endblock %}
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/latest/date-of-birth",
+    "href": "/v2/date-of-birth",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -17,27 +17,24 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/latest/number-people-live-with" method="post" class="form">
+      <form action="/v2/number-people-live-with" method="post" class="form">
 
         {{ input({
           "label": {
-            "text": "Set a username",
+            "text": "What is your postcode?",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
           },
-          "hint": {
-            "text": "Example and/or why?"
-          },
-          "id": "user",
-          "name": "user",
-          "classes": "nhsuk-input--width-20"
+          "id": "postcode",
+          "name": "postcode",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
         {{ details({
           "text": "Why we are asking this question",
           "HTML": "
           <p>We will not use this information to identify you.</p>
-          <p>We need your postcode to help us understand which areas of the country most need our resources.</p>
+          <p>We need your postcode to help us understand which areas of the country are most affected by coronavirus.</p>
           <p>We may also combine our data with data from other organisations. This information will help us make sure we do not count you twice.</p>
           "
         }) }}

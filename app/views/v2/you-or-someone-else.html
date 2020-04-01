@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-   Return - Yourself or someone else - Citizen survey tool prototype - Version 1
+   Yourself or someone else - Citizen survey tool prototype - Version 1
 {% endblock %}
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/returning",
+    "href": "/v2",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -17,14 +17,14 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/returning/reason-at-home" method="post" class="form">
+    <form action="/v2/reason-at-home" method="post" class="form">
 
       {{ radios({
         "idPrefix": "myself",
         "name": "myself",
         "fieldset": {
           "legend": {
-            "text": "Who are you completing this for?",
+            "text": "Are you completing this survey for yourself or someone else?",
             "classes": "nhsuk-fieldset__legend--l",
             "isPageHeading": true
           }
@@ -34,14 +34,9 @@
         },
         "items": [
           {
-            "value": "Kev",
-            "text": "Kev",
-            "name": "Kev"
-          },
-          {
-            "value": "Barb",
-            "text": "Barb",
-            "name": "Barb"
+            "value": "For myself",
+            "text": "For myself",
+            "name": "For myself"
           },
           {
             "value": "For someone else",

@@ -3,12 +3,12 @@
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block pageTitle %}
-   Return - Why staying home - Citizen survey tool prototype - Version 1
+   Why staying home - Citizen survey tool prototype - Version 1
 {% endblock %}
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/returning/you-or-someone-else",
+    "href": "/v2/you-or-someone-else",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -17,7 +17,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/returning/how-are-you-feeling" method="post" class="form">
+    <form action="/v2/how-are-you-feeling" method="post" class="form">
 
       {{ checkboxes({
         "idPrefix": "staying-home",
@@ -54,8 +54,12 @@
             "text": "Someone I live with has coronavirus"
           },
           {
-            "value": "I do not think I have any coronavirus symptoms. I am staying at home on government advice.",
-            "text": "I do not think I have any coronavirus symptoms. I am staying at home on government advice."
+            "value": "I am at high risk of complications from coronavirus, and am staying at home to reduce the chance of catching it",
+            "text": "I am at high risk of complications from coronavirus, and am staying at home to reduce the chance of catching it"
+          },
+          {
+            "value": "I do not think I have any coronavirus symptoms. I am staying at home on government advice",
+            "text": "I do not think I have any coronavirus symptoms. I am staying at home on government advice"
           }
         ]
       }) }}
