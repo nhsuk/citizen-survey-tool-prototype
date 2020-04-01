@@ -63,6 +63,7 @@
               </a>
             </dd>
           </div>
+          {% if (data['symptoms'] !== "I am feeling OK") %}
           <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
               When did this start?
@@ -76,6 +77,7 @@
             </a>
           </dd>
         </div>
+        {% endif %}
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
               Health problems
