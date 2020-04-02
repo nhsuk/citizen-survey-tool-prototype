@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+   Skip questions - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/return-v1/return-without-data/done" method="post" class="form">
+
+      {% call fieldset({
+        legend: {
+          "text": "Remember your details for next time?",
+          "classes": "nhsuk-fieldset__legend--xl nhsuk-u-margin-bottom-5",
+          "isPageHeading": true
+        }
+        }) %}
+      
+        <p>Please come back and complete this survey again. You can do it every day or every few days to tell us how things change.</p>
+
+        <p>To save you entering some of your information again, we can remember your:</p>
+
+        <ul>
+          <li>health problems</li>
+          <li>date of birth</li>
+          <li>postcode</li>
+          <li>number of people in your home</li>
+        </ul>
+
+        <p>We’ll store this information in a small file called a cookie on your device.</p>
+        
+        {{ radios({
+          "idPrefix": "skip-questions",
+          "name": "skip-questions",
+          "items": [
+        {
+          "value": "Yes, store these details for next time",
+          "text": "Yes, store these details for next time",
+          "hint": {
+            "text": "Do not choose this option if you share this mobile phone, tablet or computer with someone else. "
+          }
+        },
+        {
+          "value": "No, do not store these details for next time",
+          "text": "No, do not store these details for next time"
+        }
+        ]
+        }) }}
+      {% endcall %}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -21,10 +21,10 @@
               Completing survey for
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['myself'] }}
+            {{ data['myself-return'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/latest/you-or-someone-else">
+            <a class="nhsuk-link" href="/return-v1/return-with-data/you-or-someone-else">
               Change<span class="nhsuk-u-visually-hidden">Completing survey for</span>
             </a>
           </dd>
@@ -35,13 +35,13 @@
           </dt>
           <dd class="nhsuk-summary-list__value">
             <ul class="nhsuk-list">
-              {% for item in data['staying-home'] | toArray %}
+              {% for item in data['staying-home-return'] | toArray %}
                 <li>{{ item }}</li>
               {% endfor %}
             </ul>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/latest/reason-at-home">
+            <a class="nhsuk-link" href="/return-v1/return-with-data/reason-at-home">
               Change <span class="nhsuk-u-visually-hidden">Current situation</span>
             </a>
           </dd>
@@ -52,13 +52,13 @@
             </dt>
             <dd class="nhsuk-summary-list__value">
               <ul class="nhsuk-list">
-              {% for item in data['symptoms'] | toArray %}
+              {% for item in data['symptoms-return'] | toArray %}
                 <li>{{ item }}</li>
               {% endfor %}
             </ul>
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a class="nhsuk-link" href="/latest/how-are-you-feeling">
+              <a class="nhsuk-link" href="/return-v1/return-with-data/how-are-you-feeling">
                 Change <span class="nhsuk-u-visually-hidden">Current symptoms</span>
               </a>
             </dd>
@@ -69,10 +69,10 @@
               When did this start?
           </dt>
           <dd class="nhsuk-summary-list__value">
-            {{ data['date-started'] }}
+            {{ data['date-started-return'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/latest/when-did-this-start">
+            <a class="nhsuk-link" href="/return-v1/return-with-data/when-did-this-start">
               Change <span class="nhsuk-u-visually-hidden">Date symptoms started</span>
             </a>
           </dd>
@@ -90,7 +90,7 @@
             </ul>
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/latest/health-problems">
+            <a class="nhsuk-link" href="/return-v1/return-with-data/health-problems">
               Change <span class="nhsuk-u-visually-hidden">Health conditions</span>
             </a>
           </dd>
@@ -108,7 +108,7 @@
             {{ data['dob-day'] }} {{ data['dob-month'] | monthToWord }} {{ data['dob-year'] }}
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/latest/date-of-birth">
+            <a class="nhsuk-link" href="/return-v1/return-with-data/date-of-birth">
               Change <span class="nhsuk-u-visually-hidden">Date of birth</span>
             </a>
           </dd>
@@ -121,7 +121,7 @@
               {{ data['postcode'] }}
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a class="nhsuk-link" href="/latest/postcode">
+              <a class="nhsuk-link" href="/return-v1/return-with-data/postcode">
                 Change <span class="nhsuk-u-visually-hidden">Postcode</span>
               </a>
             </dd>
@@ -134,14 +134,14 @@
               {{ data['household'] }}
             </dd>
             <dd class="nhsuk-summary-list__actions">
-              <a class="nhsuk-link" href="/latest/number-people-live-with">
+              <a class="nhsuk-link" href="/return-v1/return-with-data/number-people-live-with">
                 Change <span class="nhsuk-u-visually-hidden">Number of people who live in your home</span>
               </a>
             </dd>
         </div>
       </dl>
 
-      <a class="nhsuk-button" href="/latest/done">
+      <a class="nhsuk-button" href="/return-v1/return-with-data/skip-questions">
        Send
       </a>
 

@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-// Add your routes here - above the module.exports line
+// Skip date of symptoms if no symptoms - LATEST
 router.post('/latest/when-did-this-start', (req, res, next) => {
 	if (req.session.data['symptoms'] === "I am feeling OK"){
 	  res.redirect('/latest/health-problems');
@@ -10,18 +10,35 @@ router.post('/latest/when-did-this-start', (req, res, next) => {
 	next();
 });
 
-// Add your routes here - above the module.exports line
-router.post('/latest/return-with-data/when-did-this-start', (req, res, next) => {
+// Skip date of symptoms if no symptoms - RETURN V2
+router.post('/return-v2/when-did-this-start', (req, res, next) => {
 	if (req.session.data['symptoms'] === "I am feeling OK"){
-	  res.redirect('/latest/return-with-data/check-your-answers');
+	  res.redirect('/return-v2/health-problems');
 	}
 	next();
 });
 
-// Add your routes here - above the module.exports line
-router.post('/latest/return-without-data/when-did-this-start', (req, res, next) => {
+// Return journey - skip to check answers - RETURN V2
+router.post('/return-v2/return/when-did-this-start', (req, res, next) => {
 	if (req.session.data['symptoms'] === "I am feeling OK"){
-	  res.redirect('/latest/return-without-data/check-your-answers');
+	  res.redirect('/return-v2/return/check-your-answers');
+	}
+	next();
+});
+
+
+// Return journey - skip to check answers - RETURN V1
+router.post('/return-v1/return-with-data/when-did-this-start', (req, res, next) => {
+	if (req.session.data['symptoms'] === "I am feeling OK"){
+	  res.redirect('/return-v1/return-with-data/check-your-answers');
+	}
+	next();
+});
+
+// Return journey - skip to check answers - RETURN V1
+router.post('/return-v1/return-without-data/when-did-this-start', (req, res, next) => {
+	if (req.session.data['symptoms'] === "I am feeling OK"){
+	  res.redirect('/return-v1/return-without-data/check-your-answers');
 	}
 	next();
 });

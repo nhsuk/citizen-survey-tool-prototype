@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Why staying home - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/return-v2/you-or-someone-else",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/return-v2/how-are-you-feeling" method="post" class="form">
+
+      {{ checkboxes({
+        "idPrefix": "staying-home",
+        "name": "staying-home",
+        "fieldset": {
+          "legend": {
+            "text": "What is your current situation?",
+            "classes": "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        "hint": {
+          "text": "Select all that apply"
+        },
+        "items": [
+          {
+            "value": "I have tested positive for coronavirus",
+            "text": "I have tested positive for coronavirus",
+            "checked": checked("staying-home", "I have tested positive for coronavirus")
+          },
+          {
+            "value": "My GP or another healthcare professional has told me I have coronavirus based on my symptoms",
+            "text": "My GP or another healthcare professional has told me I have coronavirus based on my symptoms",
+            "checked": checked("staying-home", "My GP or another healthcare professional has told me I have coronavirus based on my symptoms")
+          },
+          {
+            "value": "I’ve used the 111 coronavirus service (either online or by calling 111)",
+            "text": "I’ve used the 111 coronavirus service (either online or by calling 111)",
+            "checked": checked("staying-home", "I’ve used the 111 coronavirus service (either online or by calling 111)")
+          },
+          {
+            "value": "I have coronavirus symptoms",
+            "text": "I have coronavirus symptoms",
+            "checked": checked("staying-home", "I have coronavirus symptoms")
+          },
+          {
+            "value": "Someone I live with has coronavirus",
+            "text": "Someone I live with has coronavirus",
+            "checked": checked("staying-home", "Someone I live with has coronavirus")
+          },
+          {
+            "value": "I am at high risk of complications from coronavirus, and am staying at home to reduce the chance of catching it",
+            "text": "I am at high risk of complications from coronavirus, and am staying at home to reduce the chance of catching it",
+            "checked": checked("staying-home", "I am at high risk of complications from coronavirus, and am staying at home to reduce the chance of catching it")
+          },
+          {
+            "value": "I do not think I have any coronavirus symptoms. I am staying at home on government advice",
+            "text": "I do not think I have any coronavirus symptoms. I am staying at home on government advice",
+            "checked": checked("staying-home", "I do not think I have any coronavirus symptoms. I am staying at home on government advice")
+          },
+          {
+            "value": "I do not think I have coronavirus symptoms. I am one of the people who must travel to my place of work.",
+            "text": "I do not think I have coronavirus symptoms. I am one of the people who must travel to my place of work.",
+            "checked": checked("staying-home", "I do not think I have coronavirus symptoms. I am one of the people who must travel to my place of work.")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

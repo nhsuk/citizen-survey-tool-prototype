@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Number of people - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/return-v2/postcode",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/return-v2/check-your-answers" method="post" class="form">
+
+        {{ input({
+          "label": {
+            "text": "How many people live in your home, including you?",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          },
+            "hint": {
+            "text": "If you live alone, enter 1"
+          },
+          "id": "household",
+          "name": "household",
+          "classes": "nhsuk-input--width-3",
+          "value": data['household']
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
