@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+   Check answers - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+      <h2>Your experience</h2>
+
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Completing survey for
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['myself'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/latest/you-or-someone-else">
+              Change<span class="nhsuk-u-visually-hidden">Completing survey for</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Current situation
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <ul class="nhsuk-list">
+              {% for item in data['staying-home'] | toArray %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/latest/reason-at-home">
+              Change <span class="nhsuk-u-visually-hidden">Current situation</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+                How are you feeling?
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <ul class="nhsuk-list">
+              {% for item in data['symptoms'] | toArray %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link" href="/latest/how-are-you-feeling">
+                Change <span class="nhsuk-u-visually-hidden">Current symptoms</span>
+              </a>
+            </dd>
+          </div>
+          {% if (data['symptoms'] !== "I am feeling OK") %}
+          <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              When did this start?
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['date-started'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/latest/when-did-this-start">
+              Change <span class="nhsuk-u-visually-hidden">Date symptoms started</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Health problems
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <ul class="nhsuk-list">
+              {% for item in data['conditions'] | toArray %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/latest/health-problems">
+              Change <span class="nhsuk-u-visually-hidden">Health conditions</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2>Personal details</h2>
+
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            {{ data['dob-day'] }} {{ data['dob-month'] | monthToWord }} {{ data['dob-year'] }}
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="/latest/date-of-birth">
+              Change <span class="nhsuk-u-visually-hidden">Date of birth</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ data['postcode'] }}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link" href="/latest/postcode">
+                Change <span class="nhsuk-u-visually-hidden">Postcode</span>
+              </a>
+            </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Number of people who live in your home
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ data['household'] }}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link" href="/latest/number-people-live-with">
+                Change <span class="nhsuk-u-visually-hidden">Number of people who live in your home</span>
+              </a>
+            </dd>
+        </div>
+      </dl>
+
+      <a class="nhsuk-button" href="/latest/done">
+       Send
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

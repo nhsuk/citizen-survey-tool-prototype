@@ -1,0 +1,47 @@
+// Import NHS.UK frontend library
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+///////////////////////////////////////////
+// Add your custom CSS/Sass styles below... 
+///////////////////////////////////////////
+
+.nhsuk-back-link {
+  @include nhsuk-responsive-margin(4, "top");
+  margin-bottom: 0;
+}
+
+.nhsuk-inset-text--attention {
+  @include nhsuk-responsive-padding(4);
+  border: 12px solid $color_nhsuk-blue;
+}
+
+///////////////////////////////////////////
+// Style for custom corona header
+// Not currently being used but keeping as a back-up
+///////////////////////////////////////////
+
+.nhsuk-header--corona {
+  background-color: #000;
+  border-top: 10px solid #7eff8e;
+
+  .nhsuk-header__logo {
+    .nhsuk-logo__background {
+      fill: $color_nhsuk-blue;
+    }
+
+    .nhsuk-logo__text {
+        fill: $color_nhsuk-white;
+    }
+  }
+
+  .nhsuk-header__transactional-service-name--link {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .nhsuk-header__link:hover .nhsuk-logo {
+    box-shadow: 0 0 0 4px $color_nhsuk-white;
+  }
+
+}

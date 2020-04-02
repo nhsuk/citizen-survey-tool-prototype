@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   DOB - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/latest/health-problems",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/latest/postcode" method="post" class="form">
+
+        {{ dateInput({
+          "id": "dob",
+          "namePrefix": "dob",
+          "fieldset": {
+            "legend": {
+              "text": "What is your date of birth?",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "For example, 15 3 1984"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "nhsuk-input--width-2",
+              "value": data['dob-day']
+            },
+            {
+              "name": "month",
+              "classes": "nhsuk-input--width-2",
+              "value": data['dob-month']
+            },
+            {
+              "name": "year",
+              "classes": "nhsuk-input--width-4",
+              "value": data['dob-year']
+            }
+          ]
+        }) }}
+
+        {{ details({
+          "text": "Why we are asking this question",
+          "HTML": "
+          <p>We will not use this information to identify you.</p>
+          <p>We need this information to help us understand how coronavirus is affecting different age groups.</p>
+          <p>We may also combine our data with data from other organisations. This information will help us recognise your data if you complete other NHS surveys.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

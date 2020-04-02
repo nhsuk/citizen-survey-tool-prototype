@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Health problems - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/return-v1/return-without-data/when-did-this-start",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/return-v1/return-without-data/date-of-birth" method="post" class="form">
+
+      {{ checkboxes({
+        "idPrefix": "conditions",
+        "name": "conditions",
+        "fieldset": {
+          "legend": {
+            "text": "Do you have any of these health problems?",
+            "classes": "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        "hint": {
+          "text": "Select all that apply"
+        },
+        "items": [
+          {
+            "value": "I have had an organ transplant",
+            "text": "I have had an organ transplant",
+            "checked": checked("conditions", "I have had an organ transplant")
+          },
+          {
+            "value": "I am having cancer treatment",
+            "text": "I am having cancer treatment",
+            "checked": checked("conditions", "I am having cancer treatment")
+          },
+          {
+            "value": "I have blood or bone marrow cancer, such as leukaemia",
+            "text": "I have blood or bone marrow cancer, such as leukaemia",
+            "checked": checked("conditions", "I have blood or bone marrow cancer, such as leukaemia")
+          },
+          {
+            "value": "I have a severe lung condition, such as cystic fibrosis, or my doctor has told me I have severe asthma",
+            "text": "I have a severe lung condition, such as cystic fibrosis, or my doctor has told me I have severe asthma",
+            "checked": checked("conditions", "I have a severe lung condition, such as cystic fibrosis, or my doctor has told me I have severe asthma")
+          },
+          {
+            "value": "I have a condition that makes me much more likely to get infections",
+            "text": "I have a condition that makes me much more likely to get infections",
+            "checked": checked("conditions", "I have a condition that makes me much more likely to get infections")
+          },
+          {
+            "value": "I am taking medicine that weakens my immune system",
+            "text": "I am taking medicine that weakens my immune system",
+            "checked": checked("conditions", "I am taking medicine that weakens my immune system")
+          },
+          {
+            "value": " I am pregnant and have a serious heart condition",
+            "text": " I am pregnant and have a serious heart condition",
+            "checked": checked("conditions", "I am pregnant and have a serious heart condition")
+          },
+          {
+            "value": "No - I do not have any of these health problems",
+            "text": "No - I do not have any of these health problems",
+            "checked": checked("conditions", "No - I do not have any of these health problems")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

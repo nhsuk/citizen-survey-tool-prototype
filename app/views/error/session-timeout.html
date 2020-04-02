@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Session timeout - Citizen survey tool prototype
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>You have been away from your device for 30 minutes</h1>
+      
+      <p>For security reasons, we can't save what you have done so far. You will need to start again.</p>
+
+      <a class="nhsuk-button" href="/v1">
+        Start again
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

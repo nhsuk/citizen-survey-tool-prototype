@@ -1,0 +1,136 @@
+{% extends 'layout-colour.html' %}
+
+{% block pageTitle %}
+   Check answers - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+      <h2 class="nhsuk-heading-m">Coronavirus symptoms</h2>
+
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Completing survey for
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Yourself
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="#">
+              Change<span class="nhsuk-u-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Reason for staying at home
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+              Someone I live with has coronavirus
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="#">
+              Change <span class="nhsuk-u-visually-hidden">Reason for staying at home</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+                Current symptoms
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Sore throat
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link" href="#">
+                Change <span class="nhsuk-u-visually-hidden">Current symptoms</span>
+              </a>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Date symptoms started
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Today
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="#">
+              Change <span class="nhsuk-u-visually-hidden">Date symptoms started</span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Health problems
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            No - I do not have any of these health problems
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="#">
+              Change <span class="nhsuk-u-visually-hidden">Health conditions</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="nhsuk-heading-m">Personal details</h2>
+
+      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+              Date of birth
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p class="nhsuk-body">15/3/1984</p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a class="nhsuk-link" href="#">
+              Change<span class="nhsuk-u-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              LS29 6JE
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link" href="#">
+                Change<span class="nhsuk-u-visually-hidden"></span>
+              </a>
+            </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Number of people who live in your home
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              3
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a class="nhsuk-link" href="#">
+                Change<span class="nhsuk-u-visually-hidden"></span>
+              </a>
+            </dd>
+        </div>
+      </dl>
+
+      <a class="nhsuk-button" href="/colour/done">
+       Accept and send
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

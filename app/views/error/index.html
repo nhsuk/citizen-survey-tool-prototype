@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Error pages - Citizen survey tool prototype
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Error pages
+      </h1>
+
+      <ul>
+        <li><a href="/error/page-not-found">404 (page not found)</a></li>
+        <li><a href="/error/problem-with-the-service">500 (server/ unexpected error)</a></li>
+        <li><a href="/error/service-unavailable">503 (shutter)</a></li>
+        <li><a href="/error/session-timeout">session timeout (30 min of inactivity)</a></li>
+      </ul>
+
+    </div>
+  </div>
+{% endblock %}

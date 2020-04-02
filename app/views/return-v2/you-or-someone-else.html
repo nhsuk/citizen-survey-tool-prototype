@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Yourself or someone else - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/return-v2",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/return-v2/reason-at-home" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "myself",
+        "name": "myself",
+        "fieldset": {
+          "legend": {
+            "text": "Are you completing this survey for yourself or someone else?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "You can complete this survey for yourself or for someone else if you have their permission"
+        },
+        "items": [
+          {
+            "value": "For myself",
+            "text": "For myself",
+            "name": "For myself",
+            "checked": checked("myself", "For myself")
+          },
+          {
+            "value": "For someone else",
+            "text": "For someone else",
+            "name": "For someone else",
+            "checked": checked("myself", "For someone else")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

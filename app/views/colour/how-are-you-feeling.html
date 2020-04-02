@@ -1,0 +1,79 @@
+{% extends 'layout-colour.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Symptoms - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/colour/reason-at-home",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/colour/when-did-this-start" method="post" class="form">
+
+      {{ checkboxes({
+        "idPrefix": "symptoms",
+        "name": "symptoms",
+        "fieldset": {
+          "legend": {
+            "text": "Do you currently have any of these symptoms?",
+            "classes": "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        "hint": {
+          "text": "Select all that apply"
+        },
+        "items": [
+          {
+            "value": "High temperature (you feel hot to touch on your chest or back)",
+            "text": "High temperature (you feel hot to touch on your chest or back)"
+          },
+          {
+            "value": "New, continuous cough",
+            "text": "New, continuous cough"
+          },
+          {
+            "value": "Sore throat",
+            "text": "Sore throat"
+          },
+          {
+            "value": "Shortness of breath",
+            "text": "Shortness of breath"
+          },
+          {
+            "value": "Muscle or joint pain",
+            "text": "Muscle or joint pain"
+          },
+          {
+            "value": "Loss of smell or taste",
+            "text": "Loss of smell or taste"
+          },
+          {
+            "value": "Feeling tired or exhausted",
+            "text": "Feeling tired or exhausted"
+          },
+          {
+            "value": "No - I do not have any symptoms",
+            "text": "No - I do not have any symptoms"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

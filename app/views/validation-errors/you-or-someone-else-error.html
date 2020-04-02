@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Error: Yourself or someone else - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/validation-errors",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    {{ errorSummary({
+      "titleText": "There is a problem",
+      "errorList": [
+        {
+          "text": "Select 'For myself' if you are using this service for yourself",
+          "href": "#myself-1"
+        }
+      ]
+    }) }}
+
+    <form action="/v1/reason-at-home" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "myself",
+        "name": "myself",
+        "errorMessage": {
+          "text": "Select 'For myself' if you are using this service for yourself"
+        },
+        "fieldset": {
+          "legend": {
+            "text": "Are you completing this survey for yourself or someone else?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "You can complete this survey for someone else if you have their permission."
+        },
+        "items": [
+          {
+            "value": "For myself",
+            "text": "For myself",
+            "name": "For myself"
+          },
+          {
+            "value": "For someone else",
+            "text": "For someone else",
+            "name": "For someone else"
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

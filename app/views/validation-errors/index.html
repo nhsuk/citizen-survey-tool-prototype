@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Validation errors - Citizen survey tool prototype
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Validation errors
+      </h1>
+
+      <div class="nhsuk-inset-text">
+        <p>A <a href="https://docs.google.com/spreadsheets/d/1gEi_mBlZKElTqH45luGQM18lx8BgwuFBRQpay_qSkwY/edit?ts=5e7cd11b#gid=1832484141">full list of all validation errors</a> and messages are on a google spreadsheet.</p>
+      </div>
+
+      <h2>Design examples</h2>
+      <p>All validation errors use a <a href="https://service-manual.nhs.uk/design-system/components/error-message">error message</a> and <a href="https://service-manual.nhs.uk/design-system/components/error-summary">error summary</a>.</p>
+      
+      <h3>Someone elses behalf</h3>
+      <ul>
+        <li><a href="/validation-errors/you-or-someone-else-error"> if <span class="nhsuk-u-visually-hidden">Someone elses behalf</span> question is blank</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+{% endblock %}
