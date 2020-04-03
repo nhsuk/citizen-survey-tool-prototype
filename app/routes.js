@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Skip date of symptoms if no symptoms - LATEST
 router.post('/latest/when-did-this-start', (req, res, next) => {
-	if (req.session.data['symptoms'] === "I am feeling OK"){
+	if (req.session.data['symptoms'] === "I feel OK"){
 	  res.redirect('/latest/health-problems');
 	}
 	next();

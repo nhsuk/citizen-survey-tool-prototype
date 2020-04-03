@@ -1,13 +1,19 @@
 # Citizen Survey Prototype Changelog
 
-## 1.0.2 - Mar 29, 2020
+## 2.0.2 - Apr 3, 2020
+
+:new: **New content**
+
+- Update content ([JIRA Ticket SIF-95](https://jira.service.nhs.uk/browse/SIF-95))
+
+## 2.0.1 - Mar 29, 2020
 
 :wrench: **Fixes**
 - Content updates based on feedback ([JIRA Ticket SIF-68](https://jira.service.nhs.uk/browse/SIF-68))
 - Remove `cookies` paragraph in footer
 - Add `cookies` link to list of links in the footer
 
-## 1.0.1 - Mar 28, 2020
+## 2.0.0 - Mar 28, 2020
 
 :new: **New features**
 
