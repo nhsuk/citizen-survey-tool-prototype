@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "testing" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   Assigned sex at birth - Citizen survey tool prototype - Version 1
+{% endblock %}
+
+{% block beforeMain %}
+  {{ backLink({
+    "href": "/latest",
+    "text": "Go back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/reason-at-home" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "sex",
+        "name": "sex",
+        "fieldset": {
+          "legend": {
+            "text": "What sex were you assigned at birth?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Male",
+            "text": "Male",
+            "name": "Male",
+            "checked": checked("sex", "Male")
+          },
+          {
+            "value": "Female",
+            "text": "Female",
+            "name": "Female",
+            "checked": checked("sex", "Female")
+          },
+          {
+            "value": "Intersex",
+            "text": "Intersex",
+            "name": "Intersex",
+            "checked": checked("sex", "Intersex")
+          },
+          {
+            "value": "Prefer not to say",
+            "text": "Prefer not to say",
+            "name": "Prefer not to say",
+            "checked": checked("sex", "Prefer not to say")
+          }
+        ]
+      }) }}
+
+      {{ details({
+          "text": "Why we are asking this question",
+          "HTML": "
+          <p>We will not use this information to identify you.</p>
+          <p>We need your assigned sex at birth to...</p>
+          "
+        }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

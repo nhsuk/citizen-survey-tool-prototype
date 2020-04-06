@@ -10,6 +10,14 @@ router.post('/latest/when-did-this-start', (req, res, next) => {
 	next();
 });
 
+// Skip date of symptoms if no symptoms - TESTING
+router.post('/testing/when-did-this-start', (req, res, next) => {
+	if (req.session.data['symptoms'] === "I feel OK"){
+	  res.redirect('/testing/health-problems');
+	}
+	next();
+});
+
 // Skip date of symptoms if no symptoms - RETURN V2
 router.post('/return-v2/when-did-this-start', (req, res, next) => {
 	if (req.session.data['symptoms'] === "I am feeling OK"){
