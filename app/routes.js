@@ -12,7 +12,7 @@ router.post('/latest/when-did-this-start', (req, res, next) => {
 
 // Skip date of symptoms if no symptoms - TESTING
 router.post('/testing/when-did-this-start', (req, res, next) => {
-	if (req.session.data['symptoms'] === "I feel OK"){
+	if (req.session.data['symptoms'] === "None of these"){
 	  res.redirect('/testing/health-problems');
 	}
 	next();
