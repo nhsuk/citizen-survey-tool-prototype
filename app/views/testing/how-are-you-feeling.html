@@ -1,18 +1,9 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
+{% set backLink = "reason-at-home" %}
+{% set heading = "How are you feeling?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
-{% block pageTitle %}
-   Symptoms - Citizen survey tool prototype - Version 1
-{% endblock %}
-
-{% block beforeMain %}
-  {{ backLink({
-    "href": "/testing/reason-at-home",
-    "text": "Go back"
-  }) }}
-{% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -25,7 +16,7 @@
         "name": "symptoms",
         "fieldset": {
           "legend": {
-            "text": "How are you feeling?",
+            "text": heading,
             "classes": "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

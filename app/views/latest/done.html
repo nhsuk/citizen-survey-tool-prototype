@@ -1,10 +1,7 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "latest" %}
-
-{% block pageTitle %}
-   Confirmation - Citizen survey tool prototype - Version 1
-{% endblock %}
+{% set heading = "Thank you for sharing this information" %}
 
 {% block beforeMain %}
 {% endblock %}
@@ -13,7 +10,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>Thank you for sharing this information</h1>
+      <h1>{{ heading }}</h1>
 
       <p class="nhsuk-lede-text">Your answers will help the NHS plan its response to coronavirus.</p>
       

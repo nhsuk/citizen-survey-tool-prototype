@@ -1,18 +1,9 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
+{% set backLink = "date-of-birth" %}
+{% set heading = "What is your postcode?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
-{% block pageTitle %}
-   Postcode - Citizen survey tool prototype - Version 1
-{% endblock %}
-
-{% block beforeMain %}
-  {{ backLink({
-    "href": "/testing/date-of-birth",
-    "text": "Go back"
-  }) }}
-{% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -22,7 +13,7 @@
 
         {{ input({
           "label": {
-            "text": "What is your postcode?",
+            "text": heading,
             "classes": "nhsuk-label--l",
             "isPageHeading": true
           },

@@ -1,18 +1,9 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
+{% set backLink = "you-or-someone-else" %}
+{% set heading = "What is your current situation?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
-{% block pageTitle %}
-   Why staying home - Citizen survey tool prototype - Version 1
-{% endblock %}
-
-{% block beforeMain %}
-  {{ backLink({
-    "href": "/testing/you-or-someone-else",
-    "text": "Go back"
-  }) }}
-{% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -25,7 +16,7 @@
         "name": "staying-home",
         "fieldset": {
           "legend": {
-            "text": "What is your current situation?",
+            "text": heading,
             "classes": "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

@@ -1,18 +1,9 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
+{% set backLink = "" %}
+{% set heading = "What sex were you assigned at birth?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
-
-{% block pageTitle %}
-   Assigned sex at birth - Citizen survey tool prototype - Version 1
-{% endblock %}
-
-{% block beforeMain %}
-  {{ backLink({
-    "href": "/testing",
-    "text": "Go back"
-  }) }}
-{% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -25,7 +16,7 @@
         "name": "sex",
         "fieldset": {
           "legend": {
-            "text": "What sex were you assigned at birth?",
+            "text": heading,
             "classes": "nhsuk-fieldset__legend--l",
             "isPageHeading": true
           }
