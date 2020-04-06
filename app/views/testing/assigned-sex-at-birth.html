@@ -9,7 +9,7 @@
 
 {% block beforeMain %}
   {{ backLink({
-    "href": "/testing",
+    "href": "/testing/date-of-birth",
     "text": "Go back"
   }) }}
 {% endblock %}
@@ -18,7 +18,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/reason-at-home" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {{ radios({
         "idPrefix": "sex",
@@ -32,31 +32,27 @@
         },
         "items": [
           {
-            "value": "Male",
-            "text": "Male",
-            "name": "Male",
-            "checked": checked("sex", "Male")
-          },
-          {
             "value": "Female",
             "text": "Female",
             "name": "Female",
             "checked": checked("sex", "Female")
           },
           {
-            "value": "Intersex",
-            "text": "Intersex",
-            "name": "Intersex",
-            "checked": checked("sex", "Intersex")
-          },
-          {
-            "value": "Prefer not to say",
-            "text": "Prefer not to say",
-            "name": "Prefer not to say",
-            "checked": checked("sex", "Prefer not to say")
+            "value": "Male",
+            "text": "Male",
+            "name": "Male",
+            "checked": checked("sex", "Male")
           }
         ]
       }) }}
+
+      {{ details({
+          "text": "Why aren’t there more options?",
+          "HTML": "
+          <p>Some clinical assessments can be different depending on your sex. Not everyone sees themselves as female or male, so if neither option is right for you call 111.</p>
+          <p>We want to improve the service in the future so it works for everyone.</p>
+          "
+        }) }}
 
       {{ details({
           "text": "Why we are asking this question",
