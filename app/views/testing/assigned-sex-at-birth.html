@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
-{% set backLink = "" %}
-{% set heading = "What sex were you assigned at birth?" %}
+{% set backLink = "date-of-birth" %}
+{% set heading = "What is your sex?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -21,6 +21,9 @@
             "isPageHeading": true
           }
         },
+        "hint": {
+          "text": "Enter your sex at birth"
+        },
         "items": [
           {
             "value": "Female",
@@ -33,23 +36,25 @@
             "text": "Male",
             "name": "Male",
             "checked": checked("sex", "Male")
+          },
+          {
+            "divider": "or"
+          },
+          {
+            "value": "Prefer not to say",
+            "text": "Prefer not to say",
+            "name": "Prefer not to say",
+            "checked": checked("sex", "Prefer not to say")
           }
         ]
       }) }}
 
       {{ details({
-          "text": "Why aren’t there more options?",
-          "HTML": "
-          <p>Some clinical assessments can be different depending on your sex. Not everyone sees themselves as female or male, so if neither option is right for you call 111.</p>
-          <p>We want to improve the service in the future so it works for everyone.</p>
-          "
-        }) }}
-
-      {{ details({
           "text": "Why we are asking this question",
           "HTML": "
           <p>We will not use this information to identify you.</p>
-          <p>We need your assigned sex at birth to...</p>
+          <p>We are asking about sex at birth as we are interested in genetic and medical differences between men and women.</p>
+          <p>If you are non-binary, transgender, or have differences in sex development (intersex), give the sex assigned at birth or select &quot;prefer not to say&quot;.</p>
           "
         }) }}
 
