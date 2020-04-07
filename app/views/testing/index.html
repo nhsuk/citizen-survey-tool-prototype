@@ -1,18 +1,16 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
+{% set heading = "Tell the NHS about your current experience of coronavirus" %}
 
-{% block pageTitle %}
-  Start - Citizen survey tool prototype - Version 1
+{% block beforeMain %}
 {% endblock %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>
-        Tell the NHS about your current experience of coronavirus
-      </h1>
+      <h1>{{ heading }}</h1>
 
       <p>This survey will help the NHS understand more about how and where coronavirus (COVID-19) is affecting people currently.</p>
 

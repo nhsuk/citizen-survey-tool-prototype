@@ -1,10 +1,7 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "latest" %}
-
-{% block pageTitle %}
-   Check answers - Citizen survey tool prototype - Version 1
-{% endblock %}
+{% set heading = "Check your answers" %}
 
 {% block beforeMain %}
 {% endblock %}
@@ -13,7 +10,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1 class="nhsuk-heading-xl">Check your answers</h1>
+      <h1>{{ heading }}</h1>
 
       <h2>Your experience</h2>
 
