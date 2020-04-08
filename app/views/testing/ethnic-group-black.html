@@ -1,1 +1,76 @@
-black
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "testing" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Which one best describes your Black, African, Black British or Caribbean background?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+
+      {% set blackOtherHtml %}
+        {{ input({
+          id: "ethnicity-black-other",
+          name: "ethnicity-black-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Your Black background (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "african",
+            text: "African",
+            checked: checked("ethnic-group", "African")
+          },
+          {
+            text: "caribbean",
+            text: "Caribbean",
+            checked: checked("ethnic-group", "Caribbean")
+          },
+          {
+            value: "another-black-background",
+            text: "Another Black background",
+            checked: checked("ethnic-group", "Another Black background"),
+            conditional: {
+              html: blackOtherHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "prefer-not-to-say",
+            text: "Prefer not to say",
+            checked: checked("ethnic-group-black", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

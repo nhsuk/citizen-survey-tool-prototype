@@ -2,7 +2,7 @@
 
 {% set PROTOTYPEURL = "testing" %}
 {% set backLink = "ethnic-group" %}
-{% set heading = "What is your ethnic group?" %}
+{% set heading = "Which one best describes your Asian or Asian British background?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -23,11 +23,11 @@
       {% endset -%}
 
       {{ radios({
-        idPrefix: "ethnic-group-asian",
-        name: "ethnic-group-asian",
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
         fieldset: {
           legend: {
-            text: "Which one best describes your Asian or Asian British background?",
+            text: heading,
             isPageHeading: true,
             classes: "nhsuk-fieldset__legend--l"
           }
@@ -36,26 +36,27 @@
           {
             value: "bangladeshi",
             text: "Bangladeshi",
-            checked: checked("ethnic-group-asian", "Bangladeshi")
+            checked: checked("ethnic-group", "Bangladeshi")
           },
           {
             value: "chinese",
             text: "Chinese",
-            checked: checked("ethnic-group-asian", "Chinese")
+            checked: checked("ethnic-group", "Chinese")
           },
           {
             value: "indian",
             text: "Indian",
-            checked: checked("ethnic-group-asian", "Indian")
+            checked: checked("ethnic-group", "Indian")
           },
           {
             value: "pakistani",
             text: "Pakistani",
-            checked: checked("ethnic-group-asian", "Pakistani")
+            checked: checked("ethnic-group", "Pakistani")
           },
           {
             value: "another-asian-background",
             text: "Another Asian background",
+            checked: checked("ethnic-group", "Another Asian background"),
             conditional: {
               html: asianOtherHtml
             }
@@ -66,7 +67,7 @@
           {
             value: "prefer-not-to-say",
             text: "Prefer not to say",
-            checked: checked("ethnic-group-asian", "prefer-not-to-say"),
+            checked: checked("ethnic-group", "prefer-not-to-say"),
             label: {
               classes: 'nhsuk-label'
             }

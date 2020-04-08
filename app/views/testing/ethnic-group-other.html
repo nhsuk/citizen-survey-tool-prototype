@@ -1,1 +1,71 @@
-other
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "testing" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Which one best describes your background?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+
+      {% set otherOtherHtml %}
+        {{ input({
+          id: "ethnicity-mixed-other",
+          name: "ethnicity-mixed-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Your ethnic background (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "arab",
+            text: "Arab",
+            checked: checked("ethnic-group", "Arab")
+          },
+          {
+            value: "another-ethnic-background",
+            text: "Another ethnic background",
+            checked: checked("ethnic-group", "Another ethnic background"),
+            conditional: {
+              html: otherOtherHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "prefer-not-to-say",
+            text: "Prefer not to say",
+            checked: checked("ethnic-group", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
