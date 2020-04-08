@@ -2,14 +2,14 @@
 
 {% set PROTOTYPEURL = "testing" %}
 {% set backLink = "ethnic-group" %}
-{% set heading = "Which one best describes your Mixed or Multiple ethnic groups background?" %}
+{% set heading = "Which one best describes your Mixed background?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {% set mixedOtherHtml %}
         {{ input({
@@ -34,24 +34,24 @@
         },
         items: [
           {
-            value: "asian-and-white",
-            text: "Asian and White",
-            checked: checked("ethnic-group", "Asian and White")
+            value: "White and Black Caribbean",
+            text: "White and Black Caribbean",
+            checked: checked("ethnic-group", "White and Black Caribbean")
           },
           {
-            value: "black-african-and-white",
-            text: "Black African and White",
-            checked: checked("ethnic-group", "Black African and White")
+            value: "White and Black African",
+            text: "White and Black African",
+            checked: checked("ethnic-group", "White and Black African")
           },
           {
-            value: "black-caribbean-and-white",
-            text: "Black Caribbean and White",
-            checked: checked("ethnic-group", "Black Caribbean and White")
+            value: "White and Asian",
+            text: "White and Asian",
+            checked: checked("ethnic-group", "White and Asian")
           },
           {
-            value: "another-mixed-background",
-            text: "Another Mixed background",
-            checked: checked("ethnic-group", "Another Mixed background"),
+            value: "Any other mixed background",
+            text: "Any other mixed background",
+            checked: checked("ethnic-group", "Any other Mixed background"),
             conditional: {
               html: mixedOtherHtml
             }
@@ -60,7 +60,7 @@
             divider: "or"
           },
           {
-            value: "prefer-not-to-say",
+            value: "Prefer not to say",
             text: "Prefer not to say",
             checked: checked("ethnic-group", "Prefer not to say"),
             label: {

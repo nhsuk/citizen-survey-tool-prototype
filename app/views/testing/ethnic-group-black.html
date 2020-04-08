@@ -2,14 +2,14 @@
 
 {% set PROTOTYPEURL = "testing" %}
 {% set backLink = "ethnic-group" %}
-{% set heading = "Which one best describes your Black, African, Black British or Caribbean background?" %}
+{% set heading = "Which one best describes your Black or Black British background?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {% set blackOtherHtml %}
         {{ input({
@@ -34,19 +34,19 @@
         },
         items: [
           {
-            value: "african",
-            text: "African",
-            checked: checked("ethnic-group", "African")
-          },
-          {
-            text: "caribbean",
+            value: "Caribbean",
             text: "Caribbean",
             checked: checked("ethnic-group", "Caribbean")
           },
           {
-            value: "another-black-background",
-            text: "Another Black background",
-            checked: checked("ethnic-group", "Another Black background"),
+            text: "African",
+            text: "African",
+            checked: checked("ethnic-group", "African")
+          },
+          {
+            value: "Any other Black background",
+            text: "Any other Black background",
+            checked: checked("ethnic-group", "Any other Black background"),
             conditional: {
               html: blackOtherHtml
             }
@@ -55,7 +55,7 @@
             divider: "or"
           },
           {
-            value: "prefer-not-to-say",
+            value: "Prefer not to say",
             text: "Prefer not to say",
             checked: checked("ethnic-group-black", "Prefer not to say"),
             label: {

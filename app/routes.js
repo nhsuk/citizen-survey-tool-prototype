@@ -52,27 +52,27 @@ router.post('/return-v1/return-without-data/when-did-this-start', (req, res, nex
 });
 
 // Ethnicity question routing - TESTING
-router.post('/testing/ethnic-group', function (req, res) {
+router.post('/testing/postcode', function (req, res) {
 
   var install = req.session.data['ethnic-group']
 
-  if (install == "asian-or-asian-british"){
-    res.redirect('/testing/ethnic-group-asian')
-  }
-  if (install == "black-african-black-british-or-caribbean"){
-    res.redirect('/testing/ethnic-group-black')
-  }
-  if (install == "mixed-or-multiple-ethnic-groups"){
-    res.redirect('/testing/ethnic-group-mixed')
-  }
-  if (install == "white"){
+  if (install == "White"){
     res.redirect('/testing/ethnic-group-white')
   }
-  if (install == "another-ethnic-group"){
+  if (install == "Mixed"){
+    res.redirect('/testing/ethnic-group-mixed')
+  }
+  if (install == "Asian or Asian British"){
+    res.redirect('/testing/ethnic-group-asian')
+  }
+  if (install == "Black or Black British"){
+    res.redirect('/testing/ethnic-group-black')
+  }
+  if (install == "Other Ethnic groups"){
     res.redirect('/testing/ethnic-group-other')
   }
   else {
-    res.redirect('/testing/check-your-answers')
+    res.redirect('/testing/postcode')
   }
 
 })

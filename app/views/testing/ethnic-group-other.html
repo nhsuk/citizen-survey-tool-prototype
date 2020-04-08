@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {% set otherOtherHtml %}
         {{ input({
@@ -34,14 +34,14 @@
         },
         items: [
           {
-            value: "arab",
-            text: "Arab",
-            checked: checked("ethnic-group", "Arab")
+            value: "Chinese",
+            text: "Chinese",
+            checked: checked("ethnic-group", "Chinese")
           },
           {
-            value: "another-ethnic-background",
-            text: "Another ethnic background",
-            checked: checked("ethnic-group", "Another ethnic background"),
+            value: "Any other Ethnic group",
+            text: "Any other Ethnic group",
+            checked: checked("ethnic-group", "Any other Ethnic group"),
             conditional: {
               html: otherOtherHtml
             }
@@ -50,7 +50,7 @@
             divider: "or"
           },
           {
-            value: "prefer-not-to-say",
+            value: "Prefer not to say",
             text: "Prefer not to say",
             checked: checked("ethnic-group", "Prefer not to say"),
             label: {

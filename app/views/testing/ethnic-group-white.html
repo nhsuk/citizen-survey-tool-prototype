@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {% set whiteOtherHtml %}
         {{ input({
@@ -34,33 +34,25 @@
         },
         items: [
           {
-            value: "british-english-northern-irish-scottish-or-welsh",
-            text: "British, English, Northern Irish, Scottish, or Welsh",
-            checked: checked("ethnic-group", "British, English, Northern Irish, Scottish, or Welsh")
+            value: "British",
+            text: "British",
+            checked: checked("ethnic-group", "British")
           },
           {
-            value: "irish",
+            value: "Irish",
             text: "Irish",
             checked: checked("ethnic-group", "Irish")
           },
           {
-            value: "irish-traveller-or-gypsy",
-            text: "Irish Traveller or Gypsy",
-            checked: checked("ethnic-group", "Irish Traveller or Gypsy")
-          },
-          {
-            value: "another-white-background",
-            text: "Another White background",
-            checked: checked("ethnic-group", "Another White background"),
-            conditional: {
-              html: whiteOtherHtml
-            }
+            value: "Any other White background",
+            text: "Any other White background",
+            checked: checked("ethnic-group", "Any other White background")
           },
           {
             divider: "or"
           },
           {
-            value: "prefer-not-to-say",
+            value: "Prefer not to say",
             text: "Prefer not to say",
             checked: checked("ethnic-group", "Prefer not to say"),
             label: {

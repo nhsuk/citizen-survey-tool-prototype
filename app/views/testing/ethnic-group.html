@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
-{% set backLink = "index" %}
+{% set backLink = "your-sex" %}
 {% set heading = "What is your ethnic group?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/ethnic-group" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {{ radios({
         idPrefix: "ethnic-group",
@@ -23,64 +23,65 @@
         },
         items: [
           {
-            value: "asian-or-asian-british",
-            text: "Asian or Asian British",
-            label: {
-              classes: 'nhsuk-label--s'
-            },
-            hint: {
-              text: 'Includes any Asian background, for example, Bangladeshi, Chinese, Indian, Pakistani'
-            }
-          },
-          {
-            value: "black-african-black-british-or-caribbean",
-            text: "Black, African, Black British or Caribbean",
-            checked: checked("ethnic-group", "black-african-black-british-or-caribbean"),
-            label: {
-              classes: 'nhsuk-label--s'
-            },
-            hint: {
-              text: 'Includes any Black background'
-            }
-          },
-          {
-            value: "mixed-or-multiple-ethnic-groups",
-            text: "Mixed or multiple ethnic groups",
-            checked: checked("ethnic-group", "Mixed or multiple ethnic groups"),
-            label: {
-              classes: 'nhsuk-label--s'
-            },
-            hint: {
-              text: 'Includes any Mixed background'
-            }
-          },
-          {
-            value: "white",
+            value: "White",
             text: "White",
             checked: checked("ethnic-group", "White"),
             label: {
               classes: 'nhsuk-label--s'
             },
             hint: {
-              text: 'Includes any White background'
+              text: 'Includes any White background, for example, British, Irish'
             }
           },
           {
-            value: "another-ethnic-group",
-            text: "Another ethnic group",
-            checked: checked("ethnic-group", "Another ethnic group"),
+            value: "Mixed",
+            text: "Mixed",
+            checked: checked("ethnic-group", "Mixed"),
             label: {
               classes: 'nhsuk-label--s'
             },
             hint: {
-              text: 'Includes any other ethnic group, for example, Arab'
+              text: 'Includes any Mixed background, for example, White and Black Caribbean, White and Black African, White and Asian'
+            }
+          },
+          {
+            value: "Asian or Asian British",
+            text: "Asian or Asian British",
+            checked: checked("ethnic-group", "Asian or Asian British"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Includes any Asian or Asian British background, for example, Indian, Pakistani, Bangladeshi'
+            }
+          },
+          {
+            value: "Black or Black British",
+            text: "Black or Black British",
+            checked: checked("ethnic-group", "Black or Black British"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Includes any Black or Black British background, for example Caribbean, African'
+            }
+          },
+          {
+            value: "Other Ethnic groups",
+            text: "Other Ethnic groups",
+            checked: checked("ethnic-group", "Other Ethnic groups"),
+            label: {
+              classes: 'nhsuk-label--s'
+            },
+            hint: {
+              text: 'Includes any other Ethnic group, for example, Chinese'
             }
           },
           {
             divider: "or"
           },
           {
-            value: "prefer-not-to-say",
+            value: "Prefer not to say",
             text: "Prefer not to say",
             checked: checked("ethnic-group", "Prefer not to say"),
             label: {

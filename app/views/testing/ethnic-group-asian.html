@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {% set asianOtherHtml %}
         {{ input({
@@ -34,29 +34,29 @@
         },
         items: [
           {
-            value: "bangladeshi",
-            text: "Bangladeshi",
-            checked: checked("ethnic-group", "Bangladeshi")
-          },
-          {
-            value: "chinese",
-            text: "Chinese",
-            checked: checked("ethnic-group", "Chinese")
-          },
-          {
-            value: "indian",
+            value: "Indian",
             text: "Indian",
             checked: checked("ethnic-group", "Indian")
           },
           {
-            value: "pakistani",
+            value: "Pakistani",
             text: "Pakistani",
             checked: checked("ethnic-group", "Pakistani")
           },
           {
-            value: "another-asian-background",
-            text: "Another Asian background",
-            checked: checked("ethnic-group", "Another Asian background"),
+            value: "Indian",
+            text: "Indian",
+            checked: checked("ethnic-group", "Indian")
+          },
+          {
+            value: "Bangladeshi",
+            text: "Bangladeshi",
+            checked: checked("ethnic-group", "Bangladeshi")
+          },
+          {
+            value: "Any other Asian background",
+            text: "Any other Asian background",
+            checked: checked("ethnic-group", "Any other Asian background"),
             conditional: {
               html: asianOtherHtml
             }
@@ -65,9 +65,9 @@
             divider: "or"
           },
           {
-            value: "prefer-not-to-say",
+            value: "Prefer not to say",
             text: "Prefer not to say",
-            checked: checked("ethnic-group", "prefer-not-to-say"),
+            checked: checked("ethnic-group", "Prefer not to say"),
             label: {
               classes: 'nhsuk-label'
             }
