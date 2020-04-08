@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
 
 {% set PROTOTYPEURL = "testing" %}
-{% set backLink = "" %}
-{% set heading = "What sex were you assigned at birth?" %}
+{% set backLink = "date-of-birth" %}
+{% set heading = "What is your sex?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="/{{ PROTOTYPEURL }}/reason-at-home" method="post" class="form">
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
       {{ radios({
         "idPrefix": "sex",
@@ -21,13 +21,10 @@
             "isPageHeading": true
           }
         },
+        "hint": {
+          "text": "Enter your sex at birth"
+        },
         "items": [
-          {
-            "value": "Male",
-            "text": "Male",
-            "name": "Male",
-            "checked": checked("sex", "Male")
-          },
           {
             "value": "Female",
             "text": "Female",
@@ -35,10 +32,13 @@
             "checked": checked("sex", "Female")
           },
           {
-            "value": "Intersex",
-            "text": "Intersex",
-            "name": "Intersex",
-            "checked": checked("sex", "Intersex")
+            "value": "Male",
+            "text": "Male",
+            "name": "Male",
+            "checked": checked("sex", "Male")
+          },
+          {
+            "divider": "or"
           },
           {
             "value": "Prefer not to say",
@@ -53,7 +53,8 @@
           "text": "Why we are asking this question",
           "HTML": "
           <p>We will not use this information to identify you.</p>
-          <p>We need your assigned sex at birth to...</p>
+          <p>We are asking about sex at birth as we are interested in genetic and medical differences between men and women.</p>
+          <p>If you are non-binary, transgender, or have differences in sex development (intersex), give the sex assigned at birth or select &quot;prefer not to say&quot;.</p>
           "
         }) }}
 
