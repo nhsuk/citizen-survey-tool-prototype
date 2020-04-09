@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "testing" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Which one best describes your White background?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
+
+      {% set whiteOtherHtml %}
+        {{ input({
+          id: "ethnicity-white-other",
+          name: "ethnicity-white-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Your White background (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "British",
+            text: "British",
+            checked: checked("ethnic-group", "British")
+          },
+          {
+            value: "Irish",
+            text: "Irish",
+            checked: checked("ethnic-group", "Irish")
+          },
+          {
+            value: "Any other White background",
+            text: "Any other White background",
+            checked: checked("ethnic-group", "Any other White background"),
+            conditional: {
+              html: whiteOtherHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Prefer not to say",
+            text: "Prefer not to say",
+            checked: checked("ethnic-group", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

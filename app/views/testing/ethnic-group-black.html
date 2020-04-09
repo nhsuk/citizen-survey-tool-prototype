@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "testing" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Which one best describes your Black or Black British background?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
+
+      {% set blackOtherHtml %}
+        {{ input({
+          id: "ethnicity-black-other",
+          name: "ethnicity-black-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Your Black background (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Caribbean",
+            text: "Caribbean",
+            checked: checked("ethnic-group", "Caribbean")
+          },
+          {
+            text: "African",
+            text: "African",
+            checked: checked("ethnic-group", "African")
+          },
+          {
+            value: "Any other Black background",
+            text: "Any other Black background",
+            checked: checked("ethnic-group", "Any other Black background"),
+            conditional: {
+              html: blackOtherHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Prefer not to say",
+            text: "Prefer not to say",
+            checked: checked("ethnic-group-black", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "testing" %}
+{% set backLink = "ethnic-group" %}
+{% set heading = "Which one best describes your Mixed background?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
+
+      {% set mixedOtherHtml %}
+        {{ input({
+          id: "ethnicity-mixed-other",
+          name: "ethnicity-mixed-other",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Your Mixed background (optional)"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ radios({
+        idPrefix: "ethnic-group",
+        name: "ethnic-group",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "nhsuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "White and Black Caribbean",
+            text: "White and Black Caribbean",
+            checked: checked("ethnic-group", "White and Black Caribbean")
+          },
+          {
+            value: "White and Black African",
+            text: "White and Black African",
+            checked: checked("ethnic-group", "White and Black African")
+          },
+          {
+            value: "White and Asian",
+            text: "White and Asian",
+            checked: checked("ethnic-group", "White and Asian")
+          },
+          {
+            value: "Any other mixed background",
+            text: "Any other mixed background",
+            checked: checked("ethnic-group", "Any other Mixed background"),
+            conditional: {
+              html: mixedOtherHtml
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Prefer not to say",
+            text: "Prefer not to say",
+            checked: checked("ethnic-group", "Prefer not to say"),
+            label: {
+              classes: 'nhsuk-label'
+            }
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
