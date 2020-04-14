@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% set PROTOTYPEURL = "latest" %}
+{% set PROTOTYPEURL = "v2" %}
 {% set backLink = "reason-at-home" %}
-{% set heading = "How are you feeling now?" %}
+{% set heading = "How are you feeling?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -66,9 +66,9 @@
             "checked": checked("symptoms", "I have a runny nose")
           },
           {
-            "value": "None of these",
-            "text": "None of these",
-            "checked": checked("symptoms", "None of these")
+            "value": "I feel OK",
+            "text": "I feel OK",
+            "checked": checked("symptoms", "I feel OK")
           }
         ]
       }) }}
