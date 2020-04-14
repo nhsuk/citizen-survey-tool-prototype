@@ -34,6 +34,16 @@
         },
         items: [
           {
+            value: "Bangladeshi",
+            text: "Bangladeshi",
+            checked: checked("ethnic-group", "Bangladeshi")
+          },
+          {
+            value: "Chinese",
+            text: "Chinese",
+            checked: checked("ethnic-group", "Chinese")
+          },
+          {
             value: "Indian",
             text: "Indian",
             checked: checked("ethnic-group", "Indian")
@@ -44,19 +54,9 @@
             checked: checked("ethnic-group", "Pakistani")
           },
           {
-            value: "Indian",
-            text: "Indian",
-            checked: checked("ethnic-group", "Indian")
-          },
-          {
-            value: "Bangladeshi",
-            text: "Bangladeshi",
-            checked: checked("ethnic-group", "Bangladeshi")
-          },
-          {
-            value: "Any other Asian background",
-            text: "Any other Asian background",
-            checked: checked("ethnic-group", "Any other Asian background"),
+            value: "Another Asian background",
+            text: "Another Asian background",
+            checked: checked("ethnic-group", "Another Asian background"),
             conditional: {
               html: asianOtherHtml
             }

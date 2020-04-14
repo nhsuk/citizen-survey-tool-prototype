@@ -34,19 +34,24 @@
         },
         items: [
           {
-            value: "White British",
-            text: "British",
-            checked: checked("ethnic-group", "British")
+            value: "British, English, Northern Irish, Scottish, or Welsh",
+            text: "British, English, Northern Irish, Scottish, or Welsh",
+            checked: checked("ethnic-group", "British, English, Northern Irish, Scottish, or Welsh")
           },
           {
-            value: "White Irish",
+            value: "Irish",
             text: "Irish",
             checked: checked("ethnic-group", "Irish")
           },
           {
-            value: "Any other White background",
-            text: "Any other White background",
-            checked: checked("ethnic-group", "Any other White background"),
+            value: "Irish Traveller or Gypsy",
+            text: "Irish Traveller or Gypsy",
+            checked: checked("ethnic-group", "Irish Traveller or Gypsy")
+          },
+          {
+            value: "Another White background",
+            text: "Another White background",
+            checked: checked("ethnic-group", "Another White background"),
             conditional: {
               html: whiteOtherHtml
             }
