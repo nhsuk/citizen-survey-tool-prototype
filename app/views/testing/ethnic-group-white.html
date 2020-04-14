@@ -13,8 +13,8 @@
 
       {% set whiteOtherHtml %}
         {{ input({
-          id: "ethnicity-white-other",
-          name: "ethnicity-white-other",
+          id: "ethnicity-other",
+          name: "ethnicity-other",
           classes: "nhsuk-u-width-two-thirds",
           label: {
             text: "Your White background (optional)"
@@ -34,12 +34,12 @@
         },
         items: [
           {
-            value: "British",
+            value: "White British",
             text: "British",
             checked: checked("ethnic-group", "British")
           },
           {
-            value: "Irish",
+            value: "White Irish",
             text: "Irish",
             checked: checked("ethnic-group", "Irish")
           },

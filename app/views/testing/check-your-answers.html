@@ -130,7 +130,11 @@
               Ethnic group
           </dt>
           <dd class="nhsuk-summary-list__value">
+            {% if (data['ethnicity-other']) %}
+            {{ data['ethnicity-other'] }}
+            {% else %}
             {{ data['ethnic-group'] }}
+            {% endif %}
           </dd>
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ PROTOTYPEURL }}/ethnic-group">
