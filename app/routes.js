@@ -59,16 +59,16 @@ router.post('/testing/postcode', function (req, res) {
   if (install == "White"){
     res.redirect('/testing/ethnic-group-white')
   }
-  if (install == "Mixed"){
+  if (install == "Mixed or multiple ethnic groups"){
     res.redirect('/testing/ethnic-group-mixed')
   }
   if (install == "Asian or Asian British"){
     res.redirect('/testing/ethnic-group-asian')
   }
-  if (install == "Black or Black British"){
+  if (install == "Black, African, Black British or Caribbean"){
     res.redirect('/testing/ethnic-group-black')
   }
-  if (install == "Other Ethnic groups"){
+  if (install == "Another ethnic group"){
     res.redirect('/testing/ethnic-group-other')
   }
   else {
