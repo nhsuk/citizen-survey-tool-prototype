@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% set PROTOTYPEURL = "testing" %}
+{% set PROTOTYPEURL = "sex-and-ethnicity" %}
 {% set backLink = "ethnic-group" %}
-{% set heading = "Which one best describes your Asian or Asian British background?" %}
+{% set heading = "Which one best describes your White background?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -11,13 +11,13 @@
 
     <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
-      {% set asianOtherHtml %}
+      {% set whiteOtherHtml %}
         {{ input({
           id: "ethnicity-other",
           name: "ethnicity-other",
           classes: "nhsuk-u-width-two-thirds",
           label: {
-            text: "Your Asian background (optional)"
+            text: "Your White background (optional)"
           }
         }) }}
       {% endset -%}
@@ -34,31 +34,26 @@
         },
         items: [
           {
-            value: "Bangladeshi",
-            text: "Bangladeshi",
-            checked: checked("ethnic-group", "Bangladeshi")
+            value: "British, English, Northern Irish, Scottish, or Welsh",
+            text: "British, English, Northern Irish, Scottish, or Welsh",
+            checked: checked("ethnic-group", "British, English, Northern Irish, Scottish, or Welsh")
           },
           {
-            value: "Chinese",
-            text: "Chinese",
-            checked: checked("ethnic-group", "Chinese")
+            value: "Irish",
+            text: "Irish",
+            checked: checked("ethnic-group", "Irish")
           },
           {
-            value: "Indian",
-            text: "Indian",
-            checked: checked("ethnic-group", "Indian")
+            value: "Irish Traveller or Gypsy",
+            text: "Irish Traveller or Gypsy",
+            checked: checked("ethnic-group", "Irish Traveller or Gypsy")
           },
           {
-            value: "Pakistani",
-            text: "Pakistani",
-            checked: checked("ethnic-group", "Pakistani")
-          },
-          {
-            value: "Another Asian background",
-            text: "Another Asian background",
-            checked: checked("ethnic-group", "Another Asian background"),
+            value: "Another White background",
+            text: "Another White background",
+            checked: checked("ethnic-group", "Another White background"),
             conditional: {
-              html: asianOtherHtml
+              html: whiteOtherHtml
             }
           },
           {

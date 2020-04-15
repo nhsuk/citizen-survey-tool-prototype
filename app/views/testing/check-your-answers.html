@@ -17,19 +17,6 @@
       <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-7">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-              Completing survey for
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['myself'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ PROTOTYPEURL }}/you-or-someone-else">
-              Change<span class="nhsuk-u-visually-hidden">Completing survey for</span>
-            </a>
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
               Current situation
           </dt>
           <dd class="nhsuk-summary-list__value">
@@ -109,36 +96,6 @@
           <dd class="nhsuk-summary-list__actions">
             <a class="nhsuk-link" href="/{{ PROTOTYPEURL }}/date-of-birth">
               Change <span class="nhsuk-u-visually-hidden">Date of birth</span>
-            </a>
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-              Sex at birth
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ data['sex'] }}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ PROTOTYPEURL }}/your-sex">
-              Change <span class="nhsuk-u-visually-hidden">Sex at birth</span>
-            </a>
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-              Ethnic group
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            {% if (data['ethnicity-other']) %}
-            {{ data['ethnicity-other'] }}
-            {% else %}
-            {{ data['ethnic-group'] }}
-            {% endif %}
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
-            <a class="nhsuk-link" href="/{{ PROTOTYPEURL }}/ethnic-group">
-              Change <span class="nhsuk-u-visually-hidden">Ethnic group</span>
             </a>
           </dd>
         </div>

@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-{% set PROTOTYPEURL = "testing" %}
+{% set PROTOTYPEURL = "sex-and-ethnicity" %}
 {% set backLink = "health-problems" %}
 {% set heading = "What is your date of birth?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
@@ -9,7 +9,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
+      <form action="/{{ PROTOTYPEURL }}/your-sex" method="post" class="form">
 
         {{ dateInput({
           "id": "dob",

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "sex-and-ethnicity" %}
+{% set backLink = "postcode" %}
+{% set heading = "How many people live in your home, including you?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ PROTOTYPEURL }}/check-your-answers" method="post" class="form">
+
+        {{ input({
+          "label": {
+            "text": heading,
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          },
+            "hint": {
+            "text": "If you live alone, enter 1"
+          },
+          "id": "household",
+          "name": "household",
+          "classes": "nhsuk-input--width-3",
+          "inputmode": "numeric",
+          "pattern": "[0-9]*",
+          "value": data['household']
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

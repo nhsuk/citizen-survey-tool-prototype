@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% set PROTOTYPEURL = "testing" %}
+{% set PROTOTYPEURL = "sex-and-ethnicity" %}
 {% set backLink = "ethnic-group" %}
-{% set heading = "Which one best describes your White background?" %}
+{% set heading = "Which one best describes your Black, African, Black British or Caribbean background?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -11,13 +11,13 @@
 
     <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
-      {% set whiteOtherHtml %}
+      {% set blackOtherHtml %}
         {{ input({
           id: "ethnicity-other",
           name: "ethnicity-other",
           classes: "nhsuk-u-width-two-thirds",
           label: {
-            text: "Your White background (optional)"
+            text: "Your Black background (optional)"
           }
         }) }}
       {% endset -%}
@@ -34,26 +34,21 @@
         },
         items: [
           {
-            value: "British, English, Northern Irish, Scottish, or Welsh",
-            text: "British, English, Northern Irish, Scottish, or Welsh",
-            checked: checked("ethnic-group", "British, English, Northern Irish, Scottish, or Welsh")
+            value: "African",
+            text: "African",
+            checked: checked("ethnic-group", "African")
           },
           {
-            value: "Irish",
-            text: "Irish",
-            checked: checked("ethnic-group", "Irish")
+            text: "Caribbean",
+            text: "Caribbean",
+            checked: checked("ethnic-group", "Caribbean")
           },
           {
-            value: "Irish Traveller or Gypsy",
-            text: "Irish Traveller or Gypsy",
-            checked: checked("ethnic-group", "Irish Traveller or Gypsy")
-          },
-          {
-            value: "Another White background",
-            text: "Another White background",
-            checked: checked("ethnic-group", "Another White background"),
+            value: "Another Black background",
+            text: "Another Black background",
+            checked: checked("ethnic-group", "Another Black background"),
             conditional: {
-              html: whiteOtherHtml
+              html: blackOtherHtml
             }
           },
           {
@@ -62,7 +57,7 @@
           {
             value: "Prefer not to say",
             text: "Prefer not to say",
-            checked: checked("ethnic-group", "Prefer not to say"),
+            checked: checked("ethnic-group-black", "Prefer not to say"),
             label: {
               classes: 'nhsuk-label'
             }

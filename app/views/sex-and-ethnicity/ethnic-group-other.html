@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
-{% set PROTOTYPEURL = "testing" %}
+{% set PROTOTYPEURL = "sex-and-ethnicity" %}
 {% set backLink = "ethnic-group" %}
-{% set heading = "Which one best describes your Black, African, Black British or Caribbean background?" %}
+{% set heading = "Which one best describes your background?" %}
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
 {% block content %}
@@ -11,13 +11,13 @@
 
     <form action="/{{ PROTOTYPEURL }}/postcode" method="post" class="form">
 
-      {% set blackOtherHtml %}
+      {% set otherOtherHtml %}
         {{ input({
-          id: "ethnicity-other",
+          id: "ethnicity-mixed-other",
           name: "ethnicity-other",
           classes: "nhsuk-u-width-two-thirds",
           label: {
-            text: "Your Black background (optional)"
+            text: "Your ethnic background (optional)"
           }
         }) }}
       {% endset -%}
@@ -34,21 +34,16 @@
         },
         items: [
           {
-            value: "African",
-            text: "African",
-            checked: checked("ethnic-group", "African")
+            value: "Middle Eastern",
+            text: "Middle Eastern",
+            checked: checked("ethnic-group", "Middle Eastern")
           },
           {
-            text: "Caribbean",
-            text: "Caribbean",
-            checked: checked("ethnic-group", "Caribbean")
-          },
-          {
-            value: "Another Black background",
-            text: "Another Black background",
-            checked: checked("ethnic-group", "Another Black background"),
+            value: "Another ethnic group other",
+            text: "Another ethnic group",
+            checked: checked("ethnic-group", "Another ethnic group other"),
             conditional: {
-              html: blackOtherHtml
+              html: otherOtherHtml
             }
           },
           {
@@ -57,7 +52,7 @@
           {
             value: "Prefer not to say",
             text: "Prefer not to say",
-            checked: checked("ethnic-group-black", "Prefer not to say"),
+            checked: checked("ethnic-group", "Prefer not to say"),
             label: {
               classes: 'nhsuk-label'
             }
