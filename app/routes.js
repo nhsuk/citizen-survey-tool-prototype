@@ -18,6 +18,14 @@ router.post('/testing/when-did-this-start', (req, res, next) => {
 	next();
 });
 
+// Skip date of symptoms if no symptoms - SEX AND ETHNICITY
+router.post('/testing/when-did-this-start', (req, res, next) => {
+	if (req.session.data['symptoms'] === "None of these"){
+	  res.redirect('/sex-and-ethnicity/health-problems');
+	}
+	next();
+});
+
 // Skip date of symptoms if no symptoms - RETURN V2
 router.post('/return-v2/when-did-this-start', (req, res, next) => {
 	if (req.session.data['symptoms'] === "I am feeling OK"){
