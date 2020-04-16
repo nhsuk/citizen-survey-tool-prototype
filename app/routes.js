@@ -19,7 +19,7 @@ router.post('/testing/when-did-this-start', (req, res, next) => {
 });
 
 // Skip date of symptoms if no symptoms - SEX AND ETHNICITY
-router.post('/testing/when-did-this-start', (req, res, next) => {
+router.post('/sex-and-ethnicity/when-did-this-start', (req, res, next) => {
 	if (req.session.data['symptoms'] === "None of these"){
 	  res.redirect('/sex-and-ethnicity/health-problems');
 	}
