@@ -4,7 +4,7 @@ const router = express.Router();
 
 // Skip date of symptoms if no symptoms - LATEST
 router.post('/latest/when-did-this-start', (req, res, next) => {
-	if (req.session.data['symptoms'] === "I feel OK"){
+	if (req.session.data['symptoms'] === "None of these"){
 	  res.redirect('/latest/health-problems');
 	}
 	next();
@@ -52,27 +52,27 @@ router.post('/return-v1/return-without-data/when-did-this-start', (req, res, nex
 });
 
 // Ethnicity question routing - TESTING
-router.post('/testing/postcode', function (req, res) {
+router.post('/sex-and-ethnicity/postcode', function (req, res) {
 
   var install = req.session.data['ethnic-group']
 
   if (install == "White"){
-    res.redirect('/testing/ethnic-group-white')
+    res.redirect('/sex-and-ethnicity/ethnic-group-white')
   }
   if (install == "Mixed or multiple ethnic groups"){
-    res.redirect('/testing/ethnic-group-mixed')
+    res.redirect('/sex-and-ethnicity/ethnic-group-mixed')
   }
   if (install == "Asian or Asian British"){
-    res.redirect('/testing/ethnic-group-asian')
+    res.redirect('/sex-and-ethnicity/ethnic-group-asian')
   }
   if (install == "Black, African, Black British or Caribbean"){
-    res.redirect('/testing/ethnic-group-black')
+    res.redirect('/sex-and-ethnicity/ethnic-group-black')
   }
   if (install == "Another ethnic group"){
-    res.redirect('/testing/ethnic-group-other')
+    res.redirect('/sex-and-ethnicity/ethnic-group-other')
   }
   else {
-    res.redirect('/testing/postcode')
+    res.redirect('/sex-and-ethnicity/postcode')
   }
 
 })
