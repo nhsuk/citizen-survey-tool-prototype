@@ -45,3 +45,15 @@
   }
 
 }
+
+// Checkbox divider
+
+.nhsuk-checkboxes__divider {
+  $nhsuk-divider-size: $nhsuk-radios-size !default;
+  @include nhsuk-font(19);
+
+  color: $nhsuk-text-color;
+  margin-bottom: nhsuk-spacing(2);
+  text-align: center;
+  width: $nhsuk-divider-size;
+}
