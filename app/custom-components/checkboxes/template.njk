@@ -49,6 +49,9 @@
     {% set conditionalId = "conditional-" + id %}
     {% set hasHint = true if item.hint.text or item.hint.html %}
     {% set itemHintId = id + '-item-hint' %}
+	{%- if item.divider %}
+    <div class="nhsuk-checkboxes__divider">{{ item.divider }}</div>
+    {%- else %}
     <div class="nhsuk-checkboxes__item">
       <input class="nhsuk-checkboxes__input" id="{{ id }}" name="{{ name }}" type="checkbox" value="{{ item.value }}"
       {{-" checked" if item.checked }}
@@ -77,6 +80,7 @@
       <div class="nhsuk-checkboxes__conditional{% if not item.checked %} nhsuk-checkboxes__conditional--hidden{% endif %}" id="{{ conditionalId }}">
         {{ item.conditional.html | safe }}
       </div>
+    {% endif %}
     {% endif %}
     {% endfor %}
   </div>
