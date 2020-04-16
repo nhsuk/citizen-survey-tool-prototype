@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set backLink = "reason-at-home" %}
+{% set heading = "How are you feeling now?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/when-did-this-start" method="post" class="form">
+
+      {{ checkboxes({
+        "idPrefix": "symptoms",
+        "name": "symptoms",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        "hint": {
+          "text": "Tell us about any recent changes. Select all that apply."
+        },
+        "items": [
+          {
+            "value": "I have a high temperature (I feel hot to touch on my chest or back)",
+            "text": "I have a high temperature (I feel hot to touch on my chest or back)",
+            "checked": checked("symptoms", "I have a high temperature (I feel hot to touch on my chest or back)")
+          },
+          {
+            "value": "I have a new, continuous cough (I am coughing a lot for more than an hour, or have had 3 or more coughing episodes in 24 hours)",
+            "text": "I have a new, continuous cough (I am coughing a lot for more than an hour, or have had 3 or more coughing episodes in 24 hours)",
+            "checked": checked("symptoms", "I have a new, continuous cough (I am coughing a lot for more than an hour, or have had 3 or more coughing episodes in 24 hours)")
+          },
+          {
+            "value": "I have a sore throat",
+            "text": "I have a sore throat",
+            "checked": checked("symptoms", "I have a sore throat")
+          },
+          {
+            "value": "I am short of breath",
+            "text": "I am short of breath",
+            "checked": checked("symptoms", "I am short of breath")
+          },
+          {
+            "value": "I have muscle or joint pain",
+            "text": "I have muscle or joint pain",
+            "checked": checked("symptoms", "I have muscle or joint pain")
+          },
+          {
+            "value": "I have lost my sense of smell or taste",
+            "text": "I have lost my sense of smell or taste",
+            "checked": checked("symptoms", "I have lost my sense of smell or taste")
+          },
+          {
+            "value": "I feel tired or exhausted",
+            "text": "I feel tired or exhausted",
+            "checked": checked("symptoms", "I feel tired or exhausted")
+          },
+          {
+            "value": "I have a runny nose",
+            "text": "I have a runny nose",
+            "checked": checked("symptoms", "I have a runny nose")
+          },
+          {
+            "value": "None of these",
+            "text": "None of these",
+            "checked": checked("symptoms", "None of these")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

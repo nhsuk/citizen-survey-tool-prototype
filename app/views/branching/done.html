@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set heading = "Thank you for sharing this information" %}
+
+{% block beforeMain %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>{{ heading }}</h1>
+
+      <p class="nhsuk-lede-text">Your answers will help the NHS plan its response to coronavirus.</p>
+      
+      <h2>What you can do next</h2>
+      <ul>
+        <li>Stay up to date with the latest <a href="https://www.gov.uk/coronavirus">government coronavirus advice on GOV.UK</a>.</li>
+        <li>Get the latest <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/" target="_blank" rel="noopener noreferrer">NHS information on coronavirus</a>, including advice on staying at home.</li>
+        <li>Sign up for the <a href="https://111.nhs.uk/covid-19/sms" target="_blank" rel="noopener noreferrer">111 coronavirus text messaging service</a> if you have symptoms of coronavirus.</li>
+      </ul>
+
+      <div class="nhsuk-inset-text nhsuk-inset-text--attention">
+        <span class="nhsuk-u-visually-hidden">Important information: </span>
+        <h3>If you get symptoms of coronavirus, or if your symptoms get worse, get advice from:</h3>
+        <ul>
+          <li>England: <a href="https://111.nhs.uk/covid-19" target="_blank" rel="noopener noreferrer">NHS 111 online coronavirus service</a></li>
+          <li>Scotland: <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19" target="_blank" rel="noopener noreferrer">NHS inform</a></li>
+          <li>Wales: <a href="https://www.nhsdirect.wales.nhs.uk/" target="_blank" rel="noopener noreferrer">NHS Direct Wales</a></li>
+          <li>Northern Ireland: <a href="https://www.publichealth.hscni.net/news/covid-19-coronavirus" target="_blank" rel="noopener noreferrer">Public Health Agency</a></li>
+        </ul>       
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

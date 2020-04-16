@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set backLink = "how-are-you-feeling" %}
+{% set heading = "Are you travelling to your place of work?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/health-problems" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "travel-to-work",
+        "name": "travel-to-work",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "Yes, I am one of the people who must travel to my place of work",
+            "text": "Yes, I am one of the people who must travel to my place of work",
+            "name": "Yes, I am one of the people who must travel to my place of work",
+            "checked": checked("travel-to-work", "Yes, I am one of the people who must travel to my place of work")
+          },
+          {
+            "value": "No, I do not need to travel to my place of work",
+            "text": "No, I do not need to travel to my place of work",
+            "name": "No, I do not need to travel to my place of work",
+            "checked": checked("travel-to-work", "No, I do not need to travel to my place of work")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set backLink = "date-of-birth" %}
+{% set heading = "What is your postcode?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/{{ PROTOTYPEURL }}/number-people-live-with" method="post" class="form">
+
+        {{ input({
+          "label": {
+            "text": heading,
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          },
+          "id": "postcode",
+          "name": "postcode",
+          "classes": "nhsuk-input--width-10",
+          "value": data['postcode']
+        }) }}
+
+        {{ details({
+          "text": "Why we are asking this question",
+          "HTML": "
+          <p>We will not use this information to identify you.</p>
+          <p>We need your postcode to help us understand which areas of the country are most affected by coronavirus.</p>
+          <p>We may also combine our data with data from other organisations. This information will help us recognise your data if you complete other NHS surveys.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

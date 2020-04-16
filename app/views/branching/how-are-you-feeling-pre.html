@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set backLink = "how-are-you-feeling" %}
+{% set heading = "How do you feel right now?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/health-problems" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "feeling-now",
+        "name": "feeling-now",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "I feel as healthy as normal",
+            "text": "I feel as healthy as normal",
+            "name": "I feel as healthy as normal",
+            "checked": checked("feeling-now", "I feel as healthy as normal")
+          },
+          {
+            "value": "I'm not feeling quite right",
+            "text": "I'm not feeling quite right",
+            "name": "I'm not feeling quite right",
+            "checked": checked("feeling-now", "I'm not feeling quite right")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

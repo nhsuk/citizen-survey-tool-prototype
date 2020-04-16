@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set backLink = "index" %}
+{% set heading = "What is the situation of the people you live with? " %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/how-are-you-feeling" method="post" class="form">
+
+      {{ checkboxes({
+        "idPrefix": "people-you-live-with",
+        "name": "people-you-live-with",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        "hint": {
+          "text": "Select all that apply"
+        },
+        "items": [
+          {
+            "value": "I think they have coronavirus symptoms",
+            "text": "I think they have coronavirus symptoms",
+            "checked": checked("people-you-live-with", "I think they have coronavirus symptoms")
+          },
+          {
+            "value": "I think they have had coronavirus",
+            "text": "I think they have had coronavirus",
+            "checked": checked("people-you-live-with", "I think they have had coronavirus")
+          },
+          {
+            "value": "They had a test that showed they have coronavirus",
+            "text": "They had a test that showed they have coronavirus",
+            "checked": checked("people-you-live-with", "They had a test that showed they have coronavirus")
+          },
+          {
+            "value": "A GP or another healthcare professional has told them they have coronavirus",
+            "text": "A GP or another healthcare professional has told them they have coronavirus",
+            "checked": checked("people-you-live-with", "A GP or another healthcare professional has told them they have coronavirus")
+          },
+          {
+            "value": "I do not think they have any coronavirus symptoms",
+            "text": "I do not think they have any coronavirus symptoms",
+            "checked": checked("people-you-live-with", "I do not think they have any coronavirus symptoms")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
