@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% set PROTOTYPEURL = "branching" %}
+{% set backLink = "how-are-you-feeling" %}
+{% set heading = "Why do you think you have coronavirus?" %}
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="/{{ PROTOTYPEURL }}/health-problems" method="post" class="form">
+
+      {{ radios({
+        "idPrefix": "travel-to-work",
+        "name": "travel-to-work",
+        "fieldset": {
+          "legend": {
+            "text": heading,
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "I’ve used the 111 coronavirus service (online or by calling 111)",
+            "text": "I’ve used the 111 coronavirus service (online or by calling 111)",
+            "name": "I’ve used the 111 coronavirus service (online or by calling 111)",
+            "checked": checked("travel-to-work", "I’ve used the 111 coronavirus service (online or by calling 111)")
+          },
+          {
+            "value": "I had a test that showed I have coronavirus",
+            "text": "I had a test that showed I have coronavirus",
+            "name": "I had a test that showed I have coronavirus",
+            "checked": checked("travel-to-work", "I had a test that showed I have coronavirus")
+          },
+          {
+            "value": "My GP or another healthcare professional has told me I have coronavirus",
+            "text": "My GP or another healthcare professional has told me I have coronavirus",
+            "name": "My GP or another healthcare professional has told me I have coronavirus",
+            "checked": checked("travel-to-work", "My GP or another healthcare professional has told me I have coronavirus")
+          },
+          {
+            "value": "I think I have coronavirus symptoms ",
+            "text": "I think I have coronavirus symptoms ",
+            "name": "I think I have coronavirus symptoms ",
+            "checked": checked("travel-to-work", "I think I have coronavirus symptoms ")
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -11,6 +11,17 @@
 
     <form action="/{{ PROTOTYPEURL }}/when-did-this-start" method="post" class="form">
 
+      {% set otherHtml %}
+        {{ input({
+          id: "other-symptoms",
+          name: "other-symptoms",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Other symptoms (optional)"
+          }
+        }) }}
+      {% endset -%}
+
       {{ checkboxes({
         "idPrefix": "symptoms",
         "name": "symptoms",
@@ -66,9 +77,12 @@
             "checked": checked("symptoms", "I have a runny nose")
           },
           {
-            "value": "None of these",
-            "text": "None of these",
-            "checked": checked("symptoms", "None of these")
+            value: "I have other symptoms",
+            text: "I have other symptoms",
+            checked: checked("symptoms", "I have other symptoms"),
+            conditional: {
+              html: otherHtml
+            }
           }
         ]
       }) }}
